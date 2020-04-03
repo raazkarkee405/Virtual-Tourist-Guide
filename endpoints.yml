@@ -10,11 +10,11 @@
 # Server which runs your custom actions.
 # https://rasa.com/docs/rasa/core/actions/#custom-actions/
 
-action_endpoint:
- url: "http://localhost:5055/webhook"
-
 # action_endpoint:
-#   url: "http://localhost:5002/core/webhooks/facebook/webhook"
+#  url: "http://localhost:5055/webhook"
+
+action_endpoint:
+  url: "https://indrarajkarki.com.np/webhooks/facebook/webhook"
 
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
