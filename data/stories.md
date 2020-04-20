@@ -733,3 +733,15 @@
 * inform{"facility_id": "1"}
     - find_healthcare_address
     - utter_healthcare_address
+
+## New Story
+
+* greet
+    - utter_greet
+    - utter_ask_information_type
+* enquire_places_to_visit
+    - utter_search_provider_placestovisit_lifetime
+    - utter_enquire_places_to_visit
+* enquire_nature_place{"placetovisit_type":"Nature"}
+    - utter_search_provider_nature_places
+    - utter_search_nature_places_results
