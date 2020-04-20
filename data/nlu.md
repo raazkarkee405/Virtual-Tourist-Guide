@@ -30,6 +30,7 @@
 - show me place to visit
 - find me place to visit
 - i am new in nepal what are the place to visit
+- [Places to visit](information_type)[Places to visit](information_type)
 
 ## intent:enquire_visa_info
 - i need a some [visa](information_type) information
@@ -55,6 +56,7 @@
 - i want to visit [spiritual](placetovisit_type) places
 - [spiritual](placetovisit_type) places that i can visit
 - list of [spiritual](placetovisit_type) places
+- [Spiritual](placetovisit_type) place
 
 ## intent:spiritual_pashupatinath
 - [Pashupatinath](spiritualplace_type)
@@ -75,6 +77,7 @@
 - [Muktinath](spiritualplace_type)
 - i want to know about [Muktinath](spiritualplace_type)
 - provide details about [Muktinath](spiritualplace_type)
+- [muktnath](spiritualplace_type)
 
 ## intent:spiritual_janaki
 - [Janaki Temple](spiritualplace_type)
@@ -143,6 +146,8 @@
 - i want to visit [nature](placetovisit_type) places
 - [nature](placetovisit_type) places that i can visit
 - list of [nature](placetovisit_type) places
+- I want to visit [Nature](placetovisit_type)[Nature](placetovisit_type) place
+- i want to visit [Nature](placetovisit_type)[Nature](placetovisit_type) Place
 
 ## intent:nature_mountain_flights
 - [Mountain Flights](natureplace_type)
@@ -180,6 +185,7 @@
 - show me thing to do
 - find me things to do
 - i am new in nepal what are the things to do
+- Things to do in [Kathmandu](location)[Kathmandu](location)
 
 ## intent:enquire_hiking
 - [hiking](thingstodo_type)
@@ -200,6 +206,8 @@
 - which place is best for [hiking](thingstodo_type)
 - please show me the places for [hiking](thingstodo_type) in nepal
 - /enquire_hiking
+- [Hiking](thingstodo_type) destination
+- [hiking](thingstodo_type)[hiking](thingstodo_type) in nepal
 
 ## intent:enquire_trekking
 - [trekking](thingstodo_type)
@@ -218,6 +226,7 @@
 - [trekking](thingstodo_type) best location
 - which place is best for [trekking](thingstodo_type)
 - please show me the places for [trekking](thingstodo_type) in nepal
+- what about [trekking](thingstodo_type)[trekking](thingstodo_type)
 
 ## intent:enquire_canyoning
 - [canyoning](thingstodo_type)
@@ -309,6 +318,7 @@
 - need to stay tonight
 - find me a hotel
 - need to know about the hotels in nepal
+- [Accomodation](location)[Accomodation](information_type)
 
 ## intent:search_provider_hotel
 - i need a [5-star hotel](hotel_type)
@@ -376,13 +386,13 @@
 - i am in [Pokhara](location) and i need a [resort](hotel_type)
 - i need a [resort](hotel_type) in [Bhaktapur](location)
 - show me [resort](hotel_type) in [Nagarkot](location)
-- hi i am in [Biratnagar](location) i need a [resorts](hotel_type:resorts)
-- hi i am in [Palpa](location) i need a [resorts](hotel_type:resorts)
-- hi i am in [Bagbazar](location) i need a [resorts](hotel_type:resorts)
+- hi i am in [Biratnagar](location) i need a [resorts](hotel_type)
+- hi i am in [Palpa](location) i need a [resorts](hotel_type)
+- hi i am in [Bagbazar](location) i need a [resorts](hotel_type)
 - hello i am in [Lagankhel](location) i need a [resort](hotel_type:resorts)
-- hello i am in [Lazimpat](location) i need a [resorts](hotel_type:resorts)
+- hello i am in [Lazimpat](location) i need a [resorts](hotel_type)
 - hello i am in [Jorpati](location) i need a [resort](hotel_type:5-star)
-- Good morning i am in [Mahalaxmisthan](location) i need a [resorts](hotel_type:resorts)
+- Good morning i am in [Mahalaxmisthan](location) i need a [resorts](hotel_type)
 - Good morning i am in [Basundhara](location) i need a [resort](hotel_type:resorts)
 - Good morning i am in [Lalitpur](location) i need a [resort](hotel_type:resorts)
 - Hello again i need a [resort](hotel_type) in [Thimi](location)
@@ -407,7 +417,6 @@
 - Hello again i need a [tourist standard hotel](hotel_type) in [Thimi](location)
 - Good morning i need a [tourist standard hotels](hotel_type) in [Imadol](location)
 
-
 ## intent:enquire_healthfacility
 - [health facility](information_type)
 - [health facilities](information_type)
@@ -430,15 +439,15 @@
 - i am in [Kathmandu](location) and i need a [hospital](facility_type)
 - i need a [hospital](facility_type) in [Manohara](location)
 - show me [hospital](facility_type) in [Chhauni](location)
-- hi i am in [Minbhawan](location) i need a historical[hospital](facility_type:hospital)
-- hi i am in [Chhauni](location) i need a [hospital](facility_type:hospital)
+- hi i am in [Minbhawan](location) i need a historical[hospital](facility_type)
+- hi i am in [Chhauni](location) i need a [hospital](facility_type)
 - hi i am in [Bagbazar](location) i need a [hospital](facility_type:xubh-q36u)
-- hello i am in [Lagankhel](location) i need a [hospital](facility_type:hospital)
-- hello i am in [Lazimpat](location) i need a [hospital](facility_type:hospital)
-- hello i am in [Jorpati](location) i need a [hospital](facility_type:hospital)
-- Good morning i am in [Mahalaxmisthan](location) i need a [hospital](facility_type:hospital)
-- Good morning i am in [Basundhara](location) i need a [hospital](facility_type:hospital)
-- Good morning i am in [Lalitpur](location) i need a [hospital](facility_type:hospital)
+- hello i am in [Lagankhel](location) i need a [hospital](facility_type)
+- hello i am in [Lazimpat](location) i need a [hospital](facility_type)
+- hello i am in [Jorpati](location) i need a [hospital](facility_type)
+- Good morning i am in [Mahalaxmisthan](location) i need a [hospital](facility_type)
+- Good morning i am in [Basundhara](location) i need a [hospital](facility_type)
+- Good morning i am in [Lalitpur](location) i need a [hospital](facility_type)
 - Hello again i need a [hospital](facility_type) in [Thimi](location)
 - Good morning i need a [hospital](facility_type) in [Imadol](location)
 - i need a [clinic](facility_type)
@@ -448,15 +457,15 @@
 - i am in [Kathmandu](location) and i need a [clinic](facility_type)
 - i need a [clinic](facility_type) in [Manohara](location)
 - show me [clinic](facility_type) in [Chhauni](location)
-- hi i am in [Minbhawan](location) i need a historical[clinic](facility_type:clinic)
-- hi i am in [Chhauni](location) i need a [clinic](facility_type:clinic)
-- hi i am in [Bagbazar](location) i need a [clinic](facility_type:clinic)
-- hello i am in [Lagankhel](location) i need a [clinic](facility_type:clinic)
-- hello i am in [Lazimpat](location) i need a [clinic](facility_type:clinic)
-- hello i am in [Jorpati](location) i need a [clinic](facility_type:clinic)
-- Good morning i am in [Mahalaxmisthan](location) i need a [clinic](facility_type:clinic)
-- Good morning i am in [Basundhara](location) i need a [clinic](facility_type:clinic)
-- Good morning i am in [Lalitpur](location) i need a [clinic](facility_type:clinic)
+- hi i am in [Minbhawan](location) i need a historical[clinic](facility_type)
+- hi i am in [Chhauni](location) i need a [clinic](facility_type)
+- hi i am in [Bagbazar](location) i need a [clinic](facility_type)
+- hello i am in [Lagankhel](location) i need a [clinic](facility_type)
+- hello i am in [Lazimpat](location) i need a [clinic](facility_type)
+- hello i am in [Jorpati](location) i need a [clinic](facility_type)
+- Good morning i am in [Mahalaxmisthan](location) i need a [clinic](facility_type)
+- Good morning i am in [Basundhara](location) i need a [clinic](facility_type)
+- Good morning i am in [Lalitpur](location) i need a [clinic](facility_type)
 - Hello again i need a [clinics](facility_type) in [Thimi](location)
 - Good morning i need a [clinic](facility_type) in [Imadol](location)
 - i need a [pharmacy](facility_type)
@@ -466,17 +475,20 @@
 - i am in [Kathmandu](location) and i need a [pharmacy](facility_type)
 - i need a [pharmacy](facility_type) in [Manohara](location)
 - show me [pharmacies](facility_type) in [Chhauni](location)
-- hi i am in [Minbhawan](location) i need a historical[pharmacy](facility_type:pharmacy)
-- hi i am in [Chhauni](location) i need a [pharmacy](facility_type:pharmacy)
-- hi i am in [Bagbazar](location) i need a [pharmacy](facility_type:pharmacy)
-- hello i am in [Lagankhel](location) i need a [pharmacy](facility_type:pharmacy)
-- hello i am in [Lazimpat](location) i need a [pharmacy](facility_type:pharmacy)
-- hello i am in [Jorpati](location) i need a [pharmacy](facility_type:pharmacy)
-- Good morning i am in [Mahalaxmisthan](location) i need a [pharmacy](facility_type:pharmacy)
-- Good morning i am in [Basundhara](location) i need a [pharmacy](facility_type:pharmacy)
-- Good morning i am in [Lalitpur](location) i need a [pharmacy](facility_type:pharmacy)
+- hi i am in [Minbhawan](location) i need a historical[pharmacy](facility_type)
+- hi i am in [Chhauni](location) i need a [pharmacy](facility_type)
+- hi i am in [Bagbazar](location) i need a [pharmacy](facility_type)
+- hello i am in [Lagankhel](location) i need a [pharmacy](facility_type)
+- hello i am in [Lazimpat](location) i need a [pharmacy](facility_type)
+- hello i am in [Jorpati](location) i need a [pharmacy](facility_type)
+- Good morning i am in [Mahalaxmisthan](location) i need a [pharmacy](facility_type)
+- Good morning i am in [Basundhara](location) i need a [pharmacy](facility_type)
+- Good morning i am in [Lalitpur](location) i need a [pharmacy](facility_type)
 - Hello again i need a [pharmacys](facility_type) in [Thimi](location)
 - Good morning i need a [pharmacy](facility_type) in [Imadol](location)
+- [Clinic](location)[Clinic](facility_type)
+- [Hospitals](location:hospital)[Hospitals](facility_type:hospital)
+- Hospital near me
 
 ## intent:enqire_culture
 - [culture](information_type)
@@ -554,6 +566,7 @@
 ## intent:enquire_explore_more
 - [explore more](information_type)
 - i want to explore more
+- [Explore more](information_type)[Explore more](information_type)
 
 ## intent:inform
 - [visa](information_type)
@@ -606,6 +619,8 @@
 - a [hospital](facility_type)
 - a [clinic](facility_type)
 - a [pharmacy](facility_type)
+- [pokhara](location)
+
 ## intent:affirm
 - yes
 - yes sure
@@ -617,6 +632,8 @@
 - si
 - ok
 - okay
+- [Okay](location)
+- [Yes](location)
 
 ## intent:deny
 - no
@@ -662,6 +679,12 @@
 - who is your favourite robot?
 - can you help me to build a bot
 - where are you?
+- www
+- faada
+- 😘
+- you suck
+- 😔😝😱😱😀
+- ❤️
 
 ## intent:goodbye
 - Bye
@@ -698,6 +721,9 @@
 - hello is anybody there
 - hello robot
 - hi
+- namaste
+- hello
+- start
 
 ## intent:thanks
 - Thanks
@@ -716,55 +742,51 @@
 - cool, thanks
 - cool thank you
 - thanks
+- Thanks for the information
 
 ## synonym:3-star
-- 3-star hotels
 - three star hotel
+- 3 star hotel
+- 3-star hotel
 - three star hotels
 - 3 star hotels
-- 3-star hotel
-- 3 star hotel
+- 3-star hotels
 
 ## synonym:4-star
+- four star hotel
+- 4 star hotel
 - 4-star hotel
+- four star hotels
 - 4 star hotels
 - 4-star hotels
-- 4 star hotel
-- four star hotel
-- four star hotels
 
 ## synonym:5-star
-- 5 star hotels
-- five star hotels
 - five star hotel
-- 5-star hotel
-- 5-star hotels
 - 5 star hotel
+- 5-star hotel
+- five star hotels
+- 5 star hotels
+- 5-star hotels
 
-## synonym:tourist-standard-hotels
-- tourist hotels
-- standard hotels
-- tourist standard hotels
-- standard hotel
-- tourist hotel
-- tourist-standard-hotels
-
-## synonym:resorts
-- resort
-- resorts
+## synonym:clinic
+- clinics
 
 ## synonym:hospital
 - hospitals
-- hospital
-
-## synonym:clinic
-- clinic
-- clinics
 
 ## synonym:pharmacy
-- pharmacy
 - pharmacys
 - pharmacies
+
+## synonym:resorts
+- resort
+
+## synonym:tourist-standard-hotels
+- tourist standard hotels
+- standard hotel
+- tourist hotel
+- tourist hotels
+- standard hotels
 
 ## regex:location
 - [0-9]+
