@@ -30,7 +30,7 @@
 - show me place to visit
 - find me place to visit
 - i am new in nepal what are the place to visit
-- [Places to visit](information_type)[Places to visit](information_type)
+- [Places to visit](information_type)
 
 ## intent:enquire_visa_info
 - i need a some [visa](information_type) information
@@ -146,8 +146,8 @@
 - i want to visit [nature](placetovisit_type) places
 - [nature](placetovisit_type) places that i can visit
 - list of [nature](placetovisit_type) places
-- I want to visit [Nature](placetovisit_type)[Nature](placetovisit_type) place
-- i want to visit [Nature](placetovisit_type)[Nature](placetovisit_type) Place
+- I want to visit [Nature](placetovisit_type)
+- i want to visit [Nature](placetovisit_type)
 
 ## intent:nature_mountain_flights
 - [Mountain Flights](natureplace_type)
@@ -185,7 +185,7 @@
 - show me thing to do
 - find me things to do
 - i am new in nepal what are the things to do
-- Things to do in [Kathmandu](location)[Kathmandu](location)
+- Things to do in [Kathmandu](location)
 
 ## intent:enquire_hiking
 - [hiking](thingstodo_type)
@@ -207,7 +207,6 @@
 - please show me the places for [hiking](thingstodo_type) in nepal
 - /enquire_hiking
 - [Hiking](thingstodo_type) destination
-- [hiking](thingstodo_type)[hiking](thingstodo_type) in nepal
 
 ## intent:enquire_trekking
 - [trekking](thingstodo_type)
@@ -226,7 +225,7 @@
 - [trekking](thingstodo_type) best location
 - which place is best for [trekking](thingstodo_type)
 - please show me the places for [trekking](thingstodo_type) in nepal
-- what about [trekking](thingstodo_type)[trekking](thingstodo_type)
+
 
 ## intent:enquire_canyoning
 - [canyoning](thingstodo_type)
@@ -770,9 +769,11 @@
 
 ## synonym:clinic
 - clinics
+- clinic
 
 ## synonym:hospital
 - hospitals
+- hospital
 
 ## synonym:pharmacy
 - pharmacys
@@ -780,6 +781,7 @@
 
 ## synonym:resorts
 - resort
+- resorts
 
 ## synonym:tourist-standard-hotels
 - tourist standard hotels
