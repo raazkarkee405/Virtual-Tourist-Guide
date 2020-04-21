@@ -183,122 +183,122 @@ responses:
       around finding yourself, seeking your roots, whether it be practicing yoga or
       going on a mighty trek or just visiting a temple.
   utter_search_spiritual_places_results:
-  - text: 'Here are some of most popular spiritual destinations:'
-    buttons:
-    - title: Pashupatinath
-      payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
-      type: postback
-    - title: Boudhanath
-      payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
-      type: postback
-    - title: Swoyambhunath
-      payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
-      type: postback
-    - title: Muktinath
-      payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
-      type: postback
-    - title: Janaki Temple
-      payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
-      type: postback
-    - title: Others
-      payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
-      type: postback
-    channel: "facebook"
-    custom:
-      carousel:
-        maxWidth: 6
-        maxHeight: 7
-        elements: 
-          - title: Pashupatinath
-            imageButton:
-              imageUrl: https://www.welcomenepal.com/uploads/destination/pashupatinath-sm-pilgrims.jpeg
-            descriptionButton:
-              text: Dedicated to Lord Shiva.
-            defaultAction:
-              type: web_url
-              url: http://pashupatinathtemple.org
-            buttons:
-              - title: More Details
-                payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
-                type: postback
-              - title: View More
-                payload: /View More
-                type: http://pashupatinathtemple.org
-          - title: Swoyambhunath
-            imageButton:
-              imageUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Swayambhunath_2018.jpg/1280px-Swayambhunath_2018.jpg
-            descriptionButton:
-              text: This stupa is the oldest of its kind in Nepal.
-            defaultAction:
-              type: web_url
-              url: https://en.wikipedia.org/wiki/Swayambhunath
-            buttons:
-              - title: More Details
-                payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
-                type: postback
-              - title: View More
-                payload: /View More
-                type: https://en.wikipedia.org/wiki/Swayambhunath
-          - title: Boudhanath
-            imageButton:
-              imageUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Boudha_Stupa_2018_04.jpg/1200px-Boudha_Stupa_2018_04.jpg
-            descriptionButton:
-              text: Boudhanath is one of the spiritual place of Nepal famous amoung Buddhist.
-            defaultAction:
-              type: web_url
-              url: https://en.wikipedia.org/wiki/Boudhanath
-            buttons:
-              - title: More Details
-                payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
-                type: postback
-              - title: View More
-                payload: /View More
-                type: https://en.wikipedia.org/wiki/Boudhanath
-          - title: Muktinath
-            imageButton:
-              imageUrl: https://upload.wikimedia.org/wikipedia/commons/3/32/Muktinath_Temple.jpg
-            descriptionButton:
-              text: Muktinath is a sacred place for both Hindus and Buddhist.
-            defaultAction:
-              type: web_url
-              url: https://en.wikipedia.org/wiki/Muktinath
-            buttons:
-              - title: More Details
-                payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
-                type: postback
-              - title: View More
-                payload: /View More
-                type: https://en.wikipedia.org/wiki/Muktinath
-          - title: Janaki Temple
-            imageButton:
-              imageUrl: https://www.nepaltrekking.com/wp-content/uploads/2019/08/janakpur88.jpg
-            descriptionButton:
-              text: Janakpur is famous for religious and cultural tourism due to Ram-Janaki temple.
-            defaultAction:
-              type: web_url
-              url: https://en.wikipedia.org/wiki/Janaki_Mandir
-            buttons:
-              - title: More Details
-                payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
-                type: postback
-              - title: View More
-                payload: /View More
-                type: https://en.wikipedia.org/wiki/Janaki_Mandir
-          - title: Others
-            imageButton:
-              imageUrl: https://visitnepal2020.com/wp-content/uploads/2019/12/visit-nepal-2020-banner.jpg
-            descriptionButton:
-              text: Nepal is one step ahead of spiritual places
-            defaultAction:
-              type: web_url
-              url: https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal
-            buttons:
-              - title: More Details
-                payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
-                type: postback
-              - title: View More
-                payload: /View More
-                type: https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal
+  # - text: 'Here are some of most popular spiritual destinations:'
+  #   buttons:
+  #   - title: Pashupatinath
+  #     payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
+  #     type: postback
+  #   - title: Boudhanath
+  #     payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
+  #     type: postback
+  #   - title: Swoyambhunath
+  #     payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
+  #     type: postback
+  #   - title: Muktinath
+  #     payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
+  #     type: postback
+  #   - title: Janaki Temple
+  #     payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
+  #     type: postback
+  #   - title: Others
+  #     payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
+  #     type: postback
+  #   channel: "facebook"
+    - custom:
+        carousel:
+          maxWidth: 6
+          maxHeight: 7
+          elements: 
+            - title: Pashupatinath
+              imageButton:
+                imageUrl: https://www.welcomenepal.com/uploads/destination/pashupatinath-sm-pilgrims.jpeg
+              descriptionButton:
+                text: Dedicated to Lord Shiva.
+              defaultAction:
+                type: web_url
+                url: http://pashupatinathtemple.org
+              buttons:
+                - title: More Details
+                  payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
+                  type: postback
+                - title: View More
+                  payload: /View More
+                  type: http://pashupatinathtemple.org
+            - title: Swoyambhunath
+              imageButton:
+                imageUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Swayambhunath_2018.jpg/1280px-Swayambhunath_2018.jpg
+              descriptionButton:
+                text: This stupa is the oldest of its kind in Nepal.
+              defaultAction:
+                type: web_url
+                url: https://en.wikipedia.org/wiki/Swayambhunath
+              buttons:
+                - title: More Details
+                  payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
+                  type: postback
+                - title: View More
+                  payload: /View More
+                  type: https://en.wikipedia.org/wiki/Swayambhunath
+            - title: Boudhanath
+              imageButton:
+                imageUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Boudha_Stupa_2018_04.jpg/1200px-Boudha_Stupa_2018_04.jpg
+              descriptionButton:
+                text: Boudhanath is one of the spiritual place of Nepal famous amoung Buddhist.
+              defaultAction:
+                type: web_url
+                url: https://en.wikipedia.org/wiki/Boudhanath
+              buttons:
+                - title: More Details
+                  payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
+                  type: postback
+                - title: View More
+                  payload: /View More
+                  type: https://en.wikipedia.org/wiki/Boudhanath
+            - title: Muktinath
+              imageButton:
+                imageUrl: https://upload.wikimedia.org/wikipedia/commons/3/32/Muktinath_Temple.jpg
+              descriptionButton:
+                text: Muktinath is a sacred place for both Hindus and Buddhist.
+              defaultAction:
+                type: web_url
+                url: https://en.wikipedia.org/wiki/Muktinath
+              buttons:
+                - title: More Details
+                  payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
+                  type: postback
+                - title: View More
+                  payload: /View More
+                  type: https://en.wikipedia.org/wiki/Muktinath
+            - title: Janaki Temple
+              imageButton:
+                imageUrl: https://www.nepaltrekking.com/wp-content/uploads/2019/08/janakpur88.jpg
+              descriptionButton:
+                text: Janakpur is famous for religious and cultural tourism due to Ram-Janaki temple.
+              defaultAction:
+                type: web_url
+                url: https://en.wikipedia.org/wiki/Janaki_Mandir
+              buttons:
+                - title: More Details
+                  payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
+                  type: postback
+                - title: View More
+                  payload: /View More
+                  type: https://en.wikipedia.org/wiki/Janaki_Mandir
+            - title: Others
+              imageButton:
+                imageUrl: https://visitnepal2020.com/wp-content/uploads/2019/12/visit-nepal-2020-banner.jpg
+              descriptionButton:
+                text: Nepal is one step ahead of spiritual places
+              defaultAction:
+                type: web_url
+                url: https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal
+              buttons:
+                - title: More Details
+                  payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
+                  type: postback
+                - title: View More
+                  payload: /View More
+                  type: https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal
   utter_search_spiritual_pashupatinath:
   - text: "Pashupatinath\nDedicated to Lord Shiva, Pashupatinath is one of the four\
       \ most important religious sites in Asia for devotees of Shiva. Built in the\
