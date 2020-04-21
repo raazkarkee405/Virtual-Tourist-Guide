@@ -95,25 +95,26 @@ responses:
     - title: Visa
       payload: /enquire_visa_info
       type: postback
-    - payload: /enquire_places_to_visit
+    - title: Places to Visit
+      payload: /enquire_places_to_visit
       type: postback
-    - payload: /enquire_things_to_do
-      title: Things to do
+    - title: Things to do
+      payload: /enquire_things_to_do
       type: postback
-    - payload: /enquire_accommodation
-      title: Accommodation
+    - title: Accommodation
+      payload: /enquire_accommodation
       type: postback
-    - payload: /enquire_healthfacility
-      title: Health Facility
+    - title: Health Facility
+      payload: /enquire_healthfacility
       type: postback
-    - payload: /enquire_culture
-      title: Culture
+    - title: Culture
+      payload: /enquire_culture
       type: postback
-    - payload: /enquire_quick_facts
-      title: Quick Facts
+    - title: Quick Facts
+      payload: /enquire_quick_facts
       type: postback
-    - payload: /enquire_explore_more
-      title: Explore More
+    - title: Explore More
+      payload: /enquire_explore_more
       type: postback
   utter_search_provider_visa_welcome:
   - text: We are happy to welcome you.
@@ -125,10 +126,14 @@ responses:
   - text: What category interests you?
     buttons:
     - title: Spiritual Place
-    - payload: /enquire_historical_place
-      title: Historical Place
-    - payload: /enquire_nature_place
-      title: Nature Place
+      payload: /enquire_spiritual_place
+      type: postback
+    - title: Historical Place
+      payload: /enquire_historical_place
+      type: postback
+    - title: Nature Place
+      payload: /enquire_nature_place
+      type: postback
   utter_search_provider_spiritual_places:
   - text: Nepal is a one-stop Spiritual destination. Every activity here revolves
       around finding yourself, seeking your roots, whether it be practicing yoga or
@@ -137,16 +142,23 @@ responses:
   - text: 'Here are some of most popular spiritual destinations:'
     buttons:
     - title: Pashupatinath
-    - payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
-      title: Boudhanath
-    - payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
-      title: Swoyambhunath
-    - payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
-      title: Muktinath
-    - payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
-      title: Janaki Temple
-    - payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
-      title: Others
+      payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
+      type: postback
+    - title: Boudhanath
+      payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
+      type: postback
+    - title: Swoyambhunath
+      payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
+      type: postback
+    - title: Muktinath
+      payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
+      type: postback
+    - title: Janaki Temple
+      payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
+      type: postback
+    - title: Others
+      payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
+      type: postback
   utter_search_spiritual_pashupatinath:
   - text: "Pashupatinath\nDedicated to Lord Shiva, Pashupatinath is one of the four\
       \ most important religious sites in Asia for devotees of Shiva. Built in the\
@@ -200,16 +212,23 @@ responses:
   - text: 'Here are some of most popular historical destinations:'
     buttons:
     - title: Kathmandu Durbar Square
-    - payload: '/historical_patan{"historicalplace_type": "Patan Durbar Square"}'
-      title: Patan Durbar Square
-    - payload: '/historical_bhaktapur{"historicalplace_type": "Bhaktapur Durbar Square"}'
-      title: Bhaktapur Durbar Square
-    - payload: '/historical_lumbini{"historicalplace_type": "Lumbini"}'
-      title: Lumbini
-    - payload: '/historical_gorkha{"historicalplace_type": "Gorkha"}'
-      title: Gorkha Durbar
-    - payload: '/historical_other{"historicalplace_type": "Other Historical Places"}'
-      title: Others
+      payload: '/historical_kathmandu{"historicalplace_type": "Kathmandu Durbar Square"}'
+      type: postback
+    - title: Patan Durbar Square
+      payload: '/historical_patan{"historicalplace_type": "Patan Durbar Square"}'
+      type: postback
+    - title: Bhaktapur Durbar Square
+      payload: '/historical_bhaktapur{"historicalplace_type": "Bhaktapur Durbar Square"}'
+      type: postback
+    - title: Lumbini
+      payload: '/historical_lumbini{"historicalplace_type": "Lumbini"}'
+      type: postback
+    - title: Gorkha Durbar
+      payload: '/historical_gorkha{"historicalplace_type": "Gorkha"}'
+      type: postback
+    - title: Others
+      payload: '/historical_other{"historicalplace_type": "Other Historical Places"}'
+      type: postback
   utter_search_historical_kathmandu:
   - text: "Kathmandu Durbar Square\nThis is an ancient royal courtyard which lies\
       \ in the heart of the capital city, Kathmandu. Another name for Kathmandu Durbar\
@@ -268,14 +287,20 @@ responses:
   - text: 'Here are some of most popular nature destinations:'
     buttons:
     - title: Mountain Flights
-    - payload: '/nature_bird_watching{"natureplace_type": "Bird Watching"}'
-      title: Bird Watching
-    - payload: '/nature_mountain_viewing{"natureplace_type": "Mountain Viewing"}'
-      title: Mountain Viewing
-    - payload: '/nature_jungle_discovery{"natureplace_type": "Jungle Discovery"}'
-      title: Jungle Discovery
-    - payload: '/nature_butterfly_watching{"natureplace_type": "Butterfly Watching"}'
-      title: Butterfly Watching
+      payload: '/nature_mountain_flights{"natureplace_type": "Mountain Flights"}'
+      type: postback
+    - title: Bird Watching
+      payload: '/nature_bird_watching{"natureplace_type": "Bird Watching"}'
+      type: postback
+    - title: Mountain Viewing
+      payload: '/nature_mountain_viewing{"natureplace_type": "Mountain Viewing"}'
+      type: postback
+    - title: Jungle Discovery
+      payload: '/nature_jungle_discovery{"natureplace_type": "Jungle Discovery"}'
+      type: postback
+    - title: Butterfly Watching
+      payload: '/nature_butterfly_watching{"natureplace_type": "Butterfly Watching"}'
+      type: postback
   utter_search_nature_mountain_flights:
   - text: "Mountain Flights\nA mountain flight is beyond one's imagination, because\
       \ you've never seen anything like it before. Only a bird gets to see this glorious\
@@ -312,16 +337,23 @@ responses:
   - text: Let's find out!! What are you interested in?
     buttons:
     - title: Hiking
-    - payload: /enquire_trekking
-      title: Trekking
-    - payload: /enquire_canyoning
-      title: Canyoning
-    - payload: /enquire_rafting
-      title: Rafting
-    - payload: /enquire_bungee
-      title: Bungee
-    - payload: /enquire_paragliding
-      title: Paragliding
+      payload: /enquire_hiking
+      type: postback
+    - title: Trekking
+      payload: /enquire_trekking
+      type: postback
+    - title: Canyoning
+      payload: /enquire_canyoning
+      type: postback
+    - title: Rafting
+      payload: /enquire_rafting
+      type: postback
+    - title: Bungee
+      payload: /enquire_bungee
+      type: postback
+    - title: Paragliding
+      payload: /enquire_paragliding
+      type: postback
   utter_search_provider_hiking:
   - text: Have you ever experienced hiking in Nepal? If you haven't, then you are
       seriously missing out! Not only is it a beautiful adventure, but it's also an
@@ -378,10 +410,14 @@ responses:
       to various ethnicity.
     buttons:
     - title: Events & Festivals
-    - payload: '/culture_customs{"culture_type": "Customs"}'
-      title: Customs
-    - payload: '/culture_food{"culture_type": "Foods"}'
-      title: Foods
+      payload: '/culture_festivals{"culture_type": "Festivals"}'
+      type: postback
+    - title: Customs
+      payload: '/culture_customs{"culture_type": "Customs"}'
+      type: postback
+    - title: Foods
+      payload: '/culture_food{"culture_type": "Foods"}'
+      type: postback
   utter_search_provider_festivals:
   - text: Festivals are bloodline of Nepalese. Here are list of festivals celebrated
       in Nepal.
@@ -466,11 +502,8 @@ responses:
       understand more than they could speak.
   utter_search_explore_more_results_1:
   - custom:
-      attachment:
-        type: video
-        payload:
-          title: Visit Nepal
-          src: https://youtu.be/ut-U-4m42aQ
+      url:
+        media: https://youtu.be/ut-U-4m42aQ
   utter_search_explore_more_results_2:
   - text: "Explore More:\n- [Manang](https://youtu.be/t8aaEbwy70Q)\n- [Pokhara](https://youtu.be/anJF_ukzog8)\n\
       - [Chitwan](https://youtu.be/2rJP2CQHwgc)\n- [Rara Lake](https://youtu.be/-eXJRqsk21M)\n\
