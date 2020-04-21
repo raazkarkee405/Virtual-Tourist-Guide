@@ -1,5 +1,5 @@
 session_config:
-  session_expiration_time: 60.0
+  session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
 - greet
@@ -92,11 +92,10 @@ responses:
   utter_ask_information_type:
   - text: 'Get started with quick links or you can type your questions or queries:'
     buttons:
-    - payload: /enquire_visa_info
-      title: Visa
+    - title: Visa
+      payload: /enquire_visa_info
       type: postback
     - payload: /enquire_places_to_visit
-      title: Places to visit
       type: postback
     - payload: /enquire_things_to_do
       title: Things to do
@@ -125,8 +124,7 @@ responses:
   utter_enquire_places_to_visit:
   - text: What category interests you?
     buttons:
-    - payload: /enquire_spiritual_place
-      title: Spiritual Place
+    - title: Spiritual Place
     - payload: /enquire_historical_place
       title: Historical Place
     - payload: /enquire_nature_place
@@ -138,8 +136,7 @@ responses:
   utter_search_spiritual_places_results:
   - text: 'Here are some of most popular spiritual destinations:'
     buttons:
-    - payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
-      title: Pashupatinath
+    - title: Pashupatinath
     - payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
       title: Boudhanath
     - payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
@@ -202,8 +199,7 @@ responses:
   utter_search_historical_places_results:
   - text: 'Here are some of most popular historical destinations:'
     buttons:
-    - payload: '/historical_kathmandu{"historicalplace_type": "Kathmandu Durbar Square"}'
-      title: Kathmandu Durbar Square
+    - title: Kathmandu Durbar Square
     - payload: '/historical_patan{"historicalplace_type": "Patan Durbar Square"}'
       title: Patan Durbar Square
     - payload: '/historical_bhaktapur{"historicalplace_type": "Bhaktapur Durbar Square"}'
@@ -271,8 +267,7 @@ responses:
   utter_search_nature_places_results:
   - text: 'Here are some of most popular nature destinations:'
     buttons:
-    - payload: '/nature_mountain_flights{"natureplace_type": "Mountain Flights"}'
-      title: Mountain Flights
+    - title: Mountain Flights
     - payload: '/nature_bird_watching{"natureplace_type": "Bird Watching"}'
       title: Bird Watching
     - payload: '/nature_mountain_viewing{"natureplace_type": "Mountain Viewing"}'
@@ -316,8 +311,7 @@ responses:
   utter_search_provider_thingstodo:
   - text: Let's find out!! What are you interested in?
     buttons:
-    - payload: /enquire_hiking
-      title: Hiking
+    - title: Hiking
     - payload: /enquire_trekking
       title: Trekking
     - payload: /enquire_canyoning
@@ -383,8 +377,7 @@ responses:
   - text: Nepal's cultural diversity provides enormous events and activities pertaining
       to various ethnicity.
     buttons:
-    - payload: '/culture_festivals{"culture_type": "Festivals"}'
-      title: Events & Festivals
+    - title: Events & Festivals
     - payload: '/culture_customs{"culture_type": "Customs"}'
       title: Customs
     - payload: '/culture_food{"culture_type": "Foods"}'
