@@ -94,20 +94,28 @@ responses:
     buttons:
     - payload: /enquire_visa_info
       title: Visa
+      type: postback
     - payload: /enquire_places_to_visit
       title: Places to visit
+      type: postback
     - payload: /enquire_things_to_do
       title: Things to do
+      type: postback
     - payload: /enquire_accommodation
       title: Accommodation
+      type: postback
     - payload: /enquire_healthfacility
       title: Health Facility
+      type: postback
     - payload: /enquire_culture
       title: Culture
+      type: postback
     - payload: /enquire_quick_facts
       title: Quick Facts
+      type: postback
     - payload: /enquire_explore_more
       title: Explore More
+      type: postback
   utter_search_provider_visa_welcome:
   - text: We are happy to welcome you.
   utter_enquire_visa_info:
