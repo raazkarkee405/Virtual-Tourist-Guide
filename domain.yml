@@ -91,33 +91,43 @@ slots:
 responses:
   utter_ask_information_type:
   - text: 'Get started with quick links or you can type your questions or queries:'
+    channel: "facebook"
     custom:
       carousel:
-        buttons:
-        - title: Visa
-          payload: /enquire_visa_info
-          type: postback
-        - title: Places to Visit
-          payload: /enquire_places_to_visit
-          type: postback
-        - title: Things to do
-          payload: /enquire_things_to_do
-          type: postback
-        - title: Accommodation
-          payload: /enquire_accommodation
-          type: postback
-        - title: Health Facility
-          payload: /enquire_healthfacility
-          type: postback
-        - title: Culture
-          payload: /enquire_culture
-          type: postback
-        - title: Quick Facts
-          payload: /enquire_quick_facts
-          type: postback
-        - title: Explore More
-          payload: /enquire_explore_more
-          type: postback
+        elements:
+          buttons:
+          - title: Visa
+            payload: /enquire_visa_info
+            type: postback
+            buttonHeight: 1
+          - title: Places to Visit
+            payload: /enquire_places_to_visit
+            type: postback
+            buttonHeight: 1
+          - title: Things to do
+            payload: /enquire_things_to_do
+            type: postback
+            buttonHeight: 1
+          - title: Accommodation
+            payload: /enquire_accommodation
+            type: postback
+            buttonHeight: 1
+          - title: Health Facility
+            payload: /enquire_healthfacility
+            type: postback
+            buttonHeight: 1
+          - title: Culture
+            payload: /enquire_culture
+            type: postback
+            buttonHeight: 1
+          - title: Quick Facts
+            payload: /enquire_quick_facts
+            type: postback
+            buttonHeight: 1
+          - title: Explore More
+            payload: /enquire_explore_more
+            type: postback
+            buttonHeight: 1
   utter_search_provider_visa_welcome:
   - text: We are happy to welcome you.
   utter_enquire_visa_info:
@@ -504,7 +514,7 @@ responses:
       understand more than they could speak.
   utter_search_explore_more_results_1:
   - custom:
-      url:
+      video:
         media: https://youtu.be/ut-U-4m42aQ
   utter_search_explore_more_results_2:
   - text: "Explore More:\n- [Manang](https://youtu.be/t8aaEbwy70Q)\n- [Pokhara](https://youtu.be/anJF_ukzog8)\n\
