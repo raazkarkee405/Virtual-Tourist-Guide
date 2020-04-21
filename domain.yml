@@ -91,75 +91,58 @@ slots:
 responses:
   utter_ask_information_type:
   - text: 'Get started with quick links or you can type your questions or queries:'
-    buttons:
-    - payload: /enquire_visa_info
-      title: Visa
-      type: postback
-    - payload: /enquire_places_to_visit
-      title: Places to visit
-      type: postback
-    - payload: /enquire_things_to_do
-      title: Things to do
-      type: postback
-    - payload: /enquire_accommodation
-      title: Accommodation
-      type: postback
-    - payload: /enquire_healthfacility
-      title: Health Facility
-      type: postback
-    - payload: /enquire_culture
-      title: Culture
-      type: postback
-    - payload: /enquire_quick_facts
-      title: Quick Facts
-      type: postback
-    - payload: /enquire_explore_more
-      title: Explore More
-      type: postback
+    # buttons:
+    # - payload: /enquire_visa_info
+    #   title: Visa
+    #   type: postback
+    # - payload: /enquire_places_to_visit
+    #   title: Places to visit
+    #   type: postback
+    # - payload: /enquire_things_to_do
+    #   title: Things to do
+    #   type: postback
+    # - payload: /enquire_accommodation
+    #   title: Accommodation
+    #   type: postback
+    # - payload: /enquire_healthfacility
+    #   title: Health Facility
+    #   type: postback
+    # - payload: /enquire_culture
+    #   title: Culture
+    #   type: postback
+    # - payload: /enquire_quick_facts
+    #   title: Quick Facts
+    #   type: postback
+    # - payload: /enquire_explore_more
+    #   title: Explore More
+    #   type: postback
     channel: "facebook"
     custom:
-      carousel:
-        elements:
-          - buttons:
-              - title: Visa
-                payload: /enquire_visa_info
-                type: postback
-                buttonHeight: 1
-          - buttons:
-              - title: Places to Visit
-                payload: /enquire_places_to_visit
-                type: postback
-                buttonHeight: 1
-          - buttons:
-              - title: Things to do
-                payload: /enquire_things_to_do
-                type: postback
-                buttonHeight: 1
-          - buttons:
-              - title: Accommodation
-                payload: /enquire_accommodation
-                type: postback
-                buttonHeight: 1
-          - buttons:
-              - title: Health Facility
-                payload: /enquire_healthfacility
-                type: postback
-                buttonHeight: 1
-          - buttons:
-              - title: Culture
-                payload: /enquire_culture
-                type: postback
-                buttonHeight: 1
-          - buttons:
-              - title: Quick Facts
-                payload: /enquire_quick_facts
-                type: postback
-                buttonHeight: 1
-          - buttons:
-              - title: Explore More
-                payload: /enquire_explore_more
-                type: postback
-                buttonHeight: 1
+      quick_replies:
+        - content_type: text
+          title: Visa
+          payload: /enquire_visa_info
+        - content_type: text
+          title: Places to Visit
+          payload: /enquire_places_to_visit
+        - content_type: text
+          title: Things to do
+          payload: /enquire_things_to_do
+        - content_type: text
+          title: Accommodation
+          payload: /enquire_accommodation
+        - content_type: text
+          title: Health Facility
+          payload: /enquire_healthfacility
+        - content_type: text
+          title: Culture
+          payload: /enquire_culture
+        - content_type: text
+          title: Quick Facts
+          payload: /enquire_quick_facts
+        - content_type: text
+          title: Explore More
+          payload: /enquire_explore_more
   utter_search_provider_visa_welcome:
   - text: We are happy to welcome you.
   utter_enquire_visa_info:
@@ -214,9 +197,9 @@ responses:
                 imageUrl: https://www.welcomenepal.com/uploads/destination/pashupatinath-sm-pilgrims.jpeg
               descriptionButton:
                 text: Dedicated to Lord Shiva.
-              defaultAction:
-                type: web_url
-                url: http://pashupatinathtemple.org
+              # defaultAction:
+              #   type: web_url
+              #   url: http://pashupatinathtemple.org
               buttons:
                 - title: More Details
                   payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
@@ -229,9 +212,9 @@ responses:
                 imageUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Swayambhunath_2018.jpg/1280px-Swayambhunath_2018.jpg
               descriptionButton:
                 text: This stupa is the oldest of its kind in Nepal.
-              defaultAction:
-                type: web_url
-                url: https://en.wikipedia.org/wiki/Swayambhunath
+              # defaultAction:
+              #   type: web_url
+              #   url: https://en.wikipedia.org/wiki/Swayambhunath
               buttons:
                 - title: More Details
                   payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
@@ -244,9 +227,9 @@ responses:
                 imageUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Boudha_Stupa_2018_04.jpg/1200px-Boudha_Stupa_2018_04.jpg
               descriptionButton:
                 text: Boudhanath is one of the spiritual place of Nepal famous amoung Buddhist.
-              defaultAction:
-                type: web_url
-                url: https://en.wikipedia.org/wiki/Boudhanath
+              # defaultAction:
+              #   type: web_url
+              #   url: https://en.wikipedia.org/wiki/Boudhanath
               buttons:
                 - title: More Details
                   payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
@@ -259,9 +242,9 @@ responses:
                 imageUrl: https://upload.wikimedia.org/wikipedia/commons/3/32/Muktinath_Temple.jpg
               descriptionButton:
                 text: Muktinath is a sacred place for both Hindus and Buddhist.
-              defaultAction:
-                type: web_url
-                url: https://en.wikipedia.org/wiki/Muktinath
+              # defaultAction:
+              #   type: web_url
+              #   url: https://en.wikipedia.org/wiki/Muktinath
               buttons:
                 - title: More Details
                   payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
@@ -274,9 +257,9 @@ responses:
                 imageUrl: https://www.nepaltrekking.com/wp-content/uploads/2019/08/janakpur88.jpg
               descriptionButton:
                 text: Janakpur is famous for religious and cultural tourism due to Ram-Janaki temple.
-              defaultAction:
-                type: web_url
-                url: https://en.wikipedia.org/wiki/Janaki_Mandir
+              # defaultAction:
+              #   type: web_url
+              #   url: https://en.wikipedia.org/wiki/Janaki_Mandir
               buttons:
                 - title: More Details
                   payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
@@ -289,9 +272,9 @@ responses:
                 imageUrl: https://visitnepal2020.com/wp-content/uploads/2019/12/visit-nepal-2020-banner.jpg
               descriptionButton:
                 text: Nepal is one step ahead of spiritual places
-              defaultAction:
-                type: web_url
-                url: https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal
+              # defaultAction:
+              #   type: web_url
+              #   url: https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal
               buttons:
                 - title: More Details
                   payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
