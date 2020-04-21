@@ -91,31 +91,33 @@ slots:
 responses:
   utter_ask_information_type:
   - text: 'Get started with quick links or you can type your questions or queries:'
-    buttons:
-    - title: Visa
-      payload: /enquire_visa_info
-      type: postback
-    - title: Places to Visit
-      payload: /enquire_places_to_visit
-      type: postback
-    - title: Things to do
-      payload: /enquire_things_to_do
-      type: postback
-    - title: Accommodation
-      payload: /enquire_accommodation
-      type: postback
-    - title: Health Facility
-      payload: /enquire_healthfacility
-      type: postback
-    - title: Culture
-      payload: /enquire_culture
-      type: postback
-    - title: Quick Facts
-      payload: /enquire_quick_facts
-      type: postback
-    - title: Explore More
-      payload: /enquire_explore_more
-      type: postback
+    custom:
+      carousel:
+        buttons:
+        - title: Visa
+          payload: /enquire_visa_info
+          type: postback
+        - title: Places to Visit
+          payload: /enquire_places_to_visit
+          type: postback
+        - title: Things to do
+          payload: /enquire_things_to_do
+          type: postback
+        - title: Accommodation
+          payload: /enquire_accommodation
+          type: postback
+        - title: Health Facility
+          payload: /enquire_healthfacility
+          type: postback
+        - title: Culture
+          payload: /enquire_culture
+          type: postback
+        - title: Quick Facts
+          payload: /enquire_quick_facts
+          type: postback
+        - title: Explore More
+          payload: /enquire_explore_more
+          type: postback
   utter_search_provider_visa_welcome:
   - text: We are happy to welcome you.
   utter_enquire_visa_info:
