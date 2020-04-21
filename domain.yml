@@ -122,27 +122,35 @@ responses:
         - content_type: text
           title: Visa
           payload: /enquire_visa_info
+          type: postback
         - content_type: text
           title: Places to Visit
           payload: /enquire_places_to_visit
+          type: postback
         - content_type: text
           title: Things to do
           payload: /enquire_things_to_do
+          type: postback
         - content_type: text
           title: Accommodation
           payload: /enquire_accommodation
+          type: postback
         - content_type: text
           title: Health Facility
           payload: /enquire_healthfacility
+          type: postback
         - content_type: text
           title: Culture
           payload: /enquire_culture
+          type: postback
         - content_type: text
           title: Quick Facts
           payload: /enquire_quick_facts
+          type: postback
         - content_type: text
           title: Explore More
           payload: /enquire_explore_more
+          type: postback
   utter_search_provider_visa_welcome:
   - text: We are happy to welcome you.
   utter_enquire_visa_info:
@@ -624,9 +632,10 @@ responses:
       while there are still a few sherpas who didn’t speak English, most of them could
       understand more than they could speak.
   utter_search_explore_more_results_1:
-  - custom:
-      video:
-        media: https://youtu.be/ut-U-4m42aQ
+  - button:
+      title: Visit Nepal
+      payload: /visit_nepal
+      type: https://youtu.be/ut-U-4m42aQ
   utter_search_explore_more_results_2:
   - text: "Explore More:\n- [Manang](https://youtu.be/t8aaEbwy70Q)\n- [Pokhara](https://youtu.be/anJF_ukzog8)\n\
       - [Chitwan](https://youtu.be/2rJP2CQHwgc)\n- [Rara Lake](https://youtu.be/-eXJRqsk21M)\n\
