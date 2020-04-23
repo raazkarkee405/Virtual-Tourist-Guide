@@ -143,14 +143,14 @@ class FindHotelTypes(Action):
      
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List:
 
-        buttons = []
+        quick_replies = []
         for t in HOTEL_TYPES:
             hotel_type = HOTEL_TYPES[t]
             payload = "/inform{\"hotel_type\": \"" + hotel_type.get("resource") + "\"}"
 
-            buttons.append({"title": "{}".format(hotel_type.get("name").title()), "payload": payload})
+            quick_replies.append({"content_type": text, "title": "{}".format(hotel_type.get("name").title()), "payload": payload})
 
-        dispatcher.utter_button_template("utter_search_accommodation_results", buttons, tracker)
+        dispatcher.utter_button_message("utter_search_accommodation_results", quick_replies, tracker)
         return []
 
 class FindHotelAddress(Action):
@@ -245,34 +245,28 @@ class HotelForm(FormAction):
         
         buttons = []
         # limit number of results to 3 for clear presentation purposes
-        for r in results:
+        for r in results[:3]:
             if hotel_type == HOTEL_TYPES["5_star"]["resource"]:
                 hotel_id = r.get("id")
-                # hotel_city = r.get("city")
                 name = r["hotel_name"]
             elif hotel_type == HOTEL_TYPES["4_star"]["resource"]:
                 hotel_id = r.get("id")
-                # hotel_city = r.get("city")
                 name = r["hotel_name"]
             elif hotel_type == HOTEL_TYPES["3_star"]["resource"]:
                 hotel_id = r.get("id")
-                # hotel_city = r.get("city")
                 name = r["hotel_name"]
             elif hotel_type == HOTEL_TYPES["tourist_standard_hotels"]["resource"]:
                 hotel_id = r.get("id")
-                # hotel_city = r.get("city")
                 name = r["hotel_name"]
             elif hotel_type == HOTEL_TYPES["resorts"]["resource"]:
                 hotel_id = r.get("id")
-                # hotel_city = r.get("city")
                 name = r["hotel_name"]
             else:
                 hotel_id = r["id"]
-                # hotel_city = r.get("city")
                 name = r["hotel_name"]
             
             payload = "/inform{\"hotel_id\":\"" + hotel_id + "\"}"
-            buttons.append({"title": "{}".format(name.title()), "payload": payload})
+            buttons.append({"type": postback, "title": "{}".format(name.title()), "payload": payload})
 
         if len(buttons) == 1:
             message = "Here is a {} near you:".format(button_name)
@@ -360,11 +354,10 @@ class FindFacilityTypes(Action):
                 "resource") + "\"}"
 
             buttons.append(
-                {"title": "{}".format(facility_type.get("name").title()),
-                 "payload": payload})
+                {"type": postback, "title": "{}".format(facility_type.get("name").title()), "payload": payload})
 
         # TODO: update rasa core version for configurable `button_type`
-        dispatcher.utter_button_template("utter_search_healthcare_results", buttons, tracker)
+        dispatcher.utter_button_message("utter_search_healthcare_results", buttons, tracker)
         return []
 
 
@@ -458,7 +451,7 @@ class FacilityForm(FormAction):
 
         buttons = []
         # limit number of results to 3 for clear presentation purposes
-        for r in results:
+        for r in results[:3]:
             if facility_type == FACILITY_TYPES["hospital"]["resource"]:
                 facility_id = r.get("id")
                 name = r["hospital_name"]
@@ -469,12 +462,12 @@ class FacilityForm(FormAction):
                 facility_id = r.get("id")
                 name = r["pharmacy_name"]
             else:
-                hotel_id = r["id"]
-                name = r["hotel_name"]
+                facility_id = r["id"]
+                name = r["facility_name"]
 
             payload = "/inform{\"facility_id\":\"" + facility_id + "\"}"
             buttons.append(
-                {"title": "{}".format(name.title()), "payload": payload})
+                {"type": postback, "title": "{}".format(name.title()), "payload": payload})
 
         if len(buttons) == 1:
             message = "Here is a {} near you:".format(button_name)
