@@ -91,66 +91,31 @@ slots:
 responses:
   utter_ask_information_type:
   - text: 'Get started with quick links or you can type your questions or queries:'
-    # buttons:
-    # - payload: /enquire_visa_info
-    #   title: Visa
-    #   type: postback
-    # - payload: /enquire_places_to_visit
-    #   title: Places to visit
-    #   type: postback
-    # - payload: /enquire_things_to_do
-    #   title: Things to do
-    #   type: postback
-    # - payload: /enquire_accommodation
-    #   title: Accommodation
-    #   type: postback
-    # - payload: /enquire_healthfacility
-    #   title: Health Facility
-    #   type: postback
-    # - payload: /enquire_culture
-    #   title: Culture
-    #   type: postback
-    # - payload: /enquire_quick_facts
-    #   title: Quick Facts
-    #   type: postback
-    # - payload: /enquire_explore_more
-    #   title: Explore More
-    #   type: postback
-    channel: "facebook"
-    custom:
-      quick_replies:
-        - content_type: text
-          title: Visa
-          payload: /enquire_visa_info
-          type: postback
-        - content_type: text
-          title: Places to Visit
-          payload: /enquire_places_to_visit
-          type: postback
-        - content_type: text
-          title: Things to do
-          payload: /enquire_things_to_do
-          type: postback
-        - content_type: text
-          title: Accommodation
-          payload: /enquire_accommodation
-          type: postback
-        - content_type: text
-          title: Health Facility
-          payload: /enquire_healthfacility
-          type: postback
-        - content_type: text
-          title: Culture
-          payload: /enquire_culture
-          type: postback
-        - content_type: text
-          title: Quick Facts
-          payload: /enquire_quick_facts
-          type: postback
-        - content_type: text
-          title: Explore More
-          payload: /enquire_explore_more
-          type: postback
+    quick_replies:
+    - content_type: text
+      title: Visa
+      payload: /enquire_visa_info
+    - content_type: text
+      title: Places to Visit
+      payload: /enquire_places_to_visit
+    - content_type: text
+      title: Things to do
+      payload: /enquire_things_to_do
+    - content_type: text
+      title: Accommodation
+      payload: /enquire_accommodation
+    - content_type: text
+      title: Health Facility
+      payload: /enquire_healthfacility
+    - content_type: text
+      title: Culture
+      payload: /enquire_culture
+    - content_type: text
+      title: Quick Facts
+      payload: /enquire_quick_facts
+    - content_type: text
+      title: Explore More
+      payload: /enquire_explore_more
   utter_search_provider_visa_welcome:
   - text: We are happy to welcome you.
   utter_enquire_visa_info:
@@ -174,122 +139,26 @@ responses:
       around finding yourself, seeking your roots, whether it be practicing yoga or
       going on a mighty trek or just visiting a temple.
   utter_search_spiritual_places_results:
-  # - text: 'Here are some of most popular spiritual destinations:'
-  #   buttons:
-  #   - title: Pashupatinath
-  #     payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
-  #     type: postback
-  #   - title: Boudhanath
-  #     payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
-  #     type: postback
-  #   - title: Swoyambhunath
-  #     payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
-  #     type: postback
-  #   - title: Muktinath
-  #     payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
-  #     type: postback
-  #   - title: Janaki Temple
-  #     payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
-  #     type: postback
-  #   - title: Others
-  #     payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
-  #     type: postback
-  #   channel: "facebook"
-    - custom:
-        carousel:
-          maxWidth: 6
-          maxHeight: 7
-          elements: 
-            - title: Pashupatinath
-              imageButton:
-                imageUrl: https://www.welcomenepal.com/uploads/destination/pashupatinath-sm-pilgrims.jpeg
-              descriptionButton:
-                text: Dedicated to Lord Shiva.
-              # defaultAction:
-              #   type: web_url
-              #   url: http://pashupatinathtemple.org
-              buttons:
-                - title: More Details
-                  payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
-                  type: postback
-                - title: View More
-                  payload: /View More
-                  type: http://pashupatinathtemple.org
-            - title: Swoyambhunath
-              imageButton:
-                imageUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Swayambhunath_2018.jpg/1280px-Swayambhunath_2018.jpg
-              descriptionButton:
-                text: This stupa is the oldest of its kind in Nepal.
-              # defaultAction:
-              #   type: web_url
-              #   url: https://en.wikipedia.org/wiki/Swayambhunath
-              buttons:
-                - title: More Details
-                  payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
-                  type: postback
-                - title: View More
-                  payload: /View More
-                  type: https://en.wikipedia.org/wiki/Swayambhunath
-            - title: Boudhanath
-              imageButton:
-                imageUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Boudha_Stupa_2018_04.jpg/1200px-Boudha_Stupa_2018_04.jpg
-              descriptionButton:
-                text: Boudhanath is one of the spiritual place of Nepal famous amoung Buddhist.
-              # defaultAction:
-              #   type: web_url
-              #   url: https://en.wikipedia.org/wiki/Boudhanath
-              buttons:
-                - title: More Details
-                  payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
-                  type: postback
-                - title: View More
-                  payload: /View More
-                  type: https://en.wikipedia.org/wiki/Boudhanath
-            - title: Muktinath
-              imageButton:
-                imageUrl: https://upload.wikimedia.org/wikipedia/commons/3/32/Muktinath_Temple.jpg
-              descriptionButton:
-                text: Muktinath is a sacred place for both Hindus and Buddhist.
-              # defaultAction:
-              #   type: web_url
-              #   url: https://en.wikipedia.org/wiki/Muktinath
-              buttons:
-                - title: More Details
-                  payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
-                  type: postback
-                - title: View More
-                  payload: /View More
-                  type: https://en.wikipedia.org/wiki/Muktinath
-            - title: Janaki Temple
-              imageButton:
-                imageUrl: https://www.nepaltrekking.com/wp-content/uploads/2019/08/janakpur88.jpg
-              descriptionButton:
-                text: Janakpur is famous for religious and cultural tourism due to Ram-Janaki temple.
-              # defaultAction:
-              #   type: web_url
-              #   url: https://en.wikipedia.org/wiki/Janaki_Mandir
-              buttons:
-                - title: More Details
-                  payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
-                  type: postback
-                - title: View More
-                  payload: /View More
-                  type: https://en.wikipedia.org/wiki/Janaki_Mandir
-            - title: Others
-              imageButton:
-                imageUrl: https://visitnepal2020.com/wp-content/uploads/2019/12/visit-nepal-2020-banner.jpg
-              descriptionButton:
-                text: Nepal is one step ahead of spiritual places
-              # defaultAction:
-              #   type: web_url
-              #   url: https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal
-              buttons:
-                - title: More Details
-                  payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
-                  type: postback
-                - title: View More
-                  payload: /View More
-                  type: https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal
+  - text: 'Here are some of the famous Spiritual Places in Nepal:'
+    quick_replies:
+    - content_type: text
+      title: Pashupatinath
+      payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
+    - content_type: text  
+      title: Boudhanath
+      payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
+    - content_type: text
+      title: Swoyambhunath
+      payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
+    - content_type: text 
+      title: Muktinath
+      payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
+    - content_type: text
+      title: Janaki Temple
+      payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
+    - content_type: text
+      title: Others
+      payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
   utter_search_spiritual_pashupatinath:
   - text: "Pashupatinath\nDedicated to Lord Shiva, Pashupatinath is one of the four\
       \ most important religious sites in Asia for devotees of Shiva. Built in the\
@@ -341,25 +210,25 @@ responses:
       has it all.
   utter_search_historical_places_results:
   - text: 'Here are some of most popular historical destinations:'
-    buttons:
-    - title: Kathmandu Durbar Square
+    quick_replies:
+    - content_type: text
+      title: Kathmandu Durbar Square
       payload: '/historical_kathmandu{"historicalplace_type": "Kathmandu Durbar Square"}'
-      type: postback
-    - title: Patan Durbar Square
+    - content_type: text 
+      title: Patan Durbar Square
       payload: '/historical_patan{"historicalplace_type": "Patan Durbar Square"}'
-      type: postback
-    - title: Bhaktapur Durbar Square
+    - content_type: text
+      title: Bhaktapur Durbar Square
       payload: '/historical_bhaktapur{"historicalplace_type": "Bhaktapur Durbar Square"}'
-      type: postback
-    - title: Lumbini
+    - content_type: text
+      title: Lumbini
       payload: '/historical_lumbini{"historicalplace_type": "Lumbini"}'
-      type: postback
-    - title: Gorkha Durbar
+    - content_type: text
+      title: Gorkha Durbar
       payload: '/historical_gorkha{"historicalplace_type": "Gorkha"}'
-      type: postback
-    - title: Others
+    - content_type: text
+      title: Others
       payload: '/historical_other{"historicalplace_type": "Other Historical Places"}'
-      type: postback
   utter_search_historical_kathmandu:
   - text: "Kathmandu Durbar Square\nThis is an ancient royal courtyard which lies\
       \ in the heart of the capital city, Kathmandu. Another name for Kathmandu Durbar\
@@ -416,22 +285,22 @@ responses:
       attention.
   utter_search_nature_places_results:
   - text: 'Here are some of most popular nature destinations:'
-    buttons:
-    - title: Mountain Flights
+    quick_replies:
+    - content_type: text
+      title: Mountain Flights
       payload: '/nature_mountain_flights{"natureplace_type": "Mountain Flights"}'
-      type: postback
-    - title: Bird Watching
+    - content_type: text
+      title: Bird Watching
       payload: '/nature_bird_watching{"natureplace_type": "Bird Watching"}'
-      type: postback
-    - title: Mountain Viewing
+    - content_type: text
+      title: Mountain Viewing
       payload: '/nature_mountain_viewing{"natureplace_type": "Mountain Viewing"}'
-      type: postback
-    - title: Jungle Discovery
+    - content_type: text
+      title: Jungle Discovery
       payload: '/nature_jungle_discovery{"natureplace_type": "Jungle Discovery"}'
-      type: postback
-    - title: Butterfly Watching
+    - content_type: text
+      title: Butterfly Watching
       payload: '/nature_butterfly_watching{"natureplace_type": "Butterfly Watching"}'
-      type: postback
   utter_search_nature_mountain_flights:
   - text: "Mountain Flights\nA mountain flight is beyond one's imagination, because\
       \ you've never seen anything like it before. Only a bird gets to see this glorious\
@@ -466,25 +335,25 @@ responses:
     image: https://www.welcomenepal.com/uploads/activity/butterfly-oy-nature.jpeg
   utter_search_provider_thingstodo:
   - text: Let's find out!! What are you interested in?
-    buttons:
-    - title: Hiking
+    quick_replies:
+    - content_type: text
+      title: Hiking
       payload: /enquire_hiking
-      type: postback
-    - title: Trekking
+    - content_type: text
+      title: Trekking
       payload: /enquire_trekking
-      type: postback
-    - title: Canyoning
+    - content_type: text
+      title: Canyoning
       payload: /enquire_canyoning
-      type: postback
-    - title: Rafting
+    - content_type: text
+      title: Rafting
       payload: /enquire_rafting
-      type: postback
-    - title: Bungee
+    - content_type: text
+      title: Bungee
       payload: /enquire_bungee
-      type: postback
-    - title: Paragliding
+    - content_type: text
+      title: Paragliding
       payload: /enquire_paragliding
-      type: postback
   utter_search_provider_hiking:
   - text: Have you ever experienced hiking in Nepal? If you haven't, then you are
       seriously missing out! Not only is it a beautiful adventure, but it's also an
@@ -632,16 +501,45 @@ responses:
       while there are still a few sherpas who didn’t speak English, most of them could
       understand more than they could speak.
   utter_search_explore_more_results_1:
-  - button:
-      title: Visit Nepal
-      payload: /visit_nepal
-      type: https://youtu.be/ut-U-4m42aQ
+  - text: Visit Nepal
+    attachment:
+      type: video
+      payload:
+        src: 'https://youtu.be/ut-U-4m42aQ'
   utter_search_explore_more_results_2:
-  - text: "Explore More:\n- [Manang](https://youtu.be/t8aaEbwy70Q)\n- [Pokhara](https://youtu.be/anJF_ukzog8)\n\
-      - [Chitwan](https://youtu.be/2rJP2CQHwgc)\n- [Rara Lake](https://youtu.be/-eXJRqsk21M)\n\
-      - [Far West Nepal](https://youtu.be/WQ3loHowLQo)\n- [LoManthang](https://youtu.be/0iMu5KrmlH0)\n\
-      - [Dolakha](https://youtu.be/VZiab-AuXRo)\n- [Bardiya](https://youtu.be/z3fiNUnrS-o)\n\
-      - [Lamjung](https://youtu.be/81QCDQi_Hew)\n- [East Nepal](https://youtu.be/jZXam7JOe-s)\n"
+  text: Explore Other Popular Places Like
+  quick_replies:
+  - content_type: text
+    title: Manang
+    payload: 'https://youtu.be/t8aaEbwy70Q'
+  - content_type: text
+    title: Pokhara
+    payload: 'https://youtu.be/anJF_ukzog8'
+  - content_type: text
+    title: Chitwan
+    payload: 'https://youtu.be/2rJP2CQHwgc'
+  - content_type: text
+    title: Rara Lake
+    payload: 'https://youtu.be/-eXJRqsk21M'
+  - content_type: text
+    title: Far West Nepal
+    payload: 'https://youtu.be/WQ3loHowLQo'
+  - content_type: text
+    title: LoManthang
+    payload: 'https://youtu.be/0iMu5KrmlH0'
+  - content_type: text
+    title: Dolakha
+    payload: 'https://youtu.be/VZiab-AuXRo'
+  - content_type: text
+    title: Bardiya
+    payload: 'https://youtu.be/z3fiNUnrS-o'
+  - content_type: text
+    title: Lamjung
+    payload: 'https://youtu.be/81QCDQi_Hew'
+  - content_type: text
+    title: East Nepal
+    payload: 'https://youtu.be/jZXam7JOe-s'
+
   utter_search_accommodation_results:
   - text: 'Hey there! Please choose one of the hotel type from the options:'
   utter_search_healthcare_results:
