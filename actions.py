@@ -18,20 +18,6 @@ from rasa_sdk.events import SlotSet, FollowupAction
 from rasa_sdk.forms import FormAction
 
 
-# class ActionHelloWorld(Action):
-
-#     def name(self) -> Text:
-#         return "action_hello_world"
-
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-#         dispatcher.utter_message(text="Hello World!")
-
-#         return []
-
-
 ENDPOINTS = {
     "base": "https://raazkarkee.pythonanywhere.com/getJsonFromFile/{}.json",
     "5-star": 
@@ -117,13 +103,13 @@ def _find_hotels(location: Text, resource: Text) -> List[Dict]:
 
     if str(location):
         full_path = _create_path(ENDPOINTS["base"], resource, ENDPOINTS[resource]["city_query"],location.upper())
-        print("result of full path if____________:",full_path)
+        
     else:
         full_path = _create_path(ENDPOINTS["base"], resource, ENDPOINTS[resource]["city_query"],location.upper())
-        print("result of full path else____________:",full_path)
+        
     
     results = requests.get(full_path).json()
-    print("Results__________________________:",results)
+
     return results
 
 def _resolve_name(hotel_type, resource) ->Text:
@@ -148,9 +134,8 @@ class FindHotelTypes(Action):
             hotel_type = HOTEL_TYPES[t]
             payload = "/inform{\"hotel_type\": \"" + hotel_type.get("resource") + "\"}"
 
-            quick_replies.append({"content_type": text, "title": "{}".format(hotel_type.get("name").title()), "payload": payload})
-
-        dispatcher.utter_button_message("utter_search_accommodation_results", quick_replies, tracker)
+            quick_replies.append({"content_type": "text", "title": "{}".format(hotel_type.get("name").title()), "payload": payload})
+        dispatcher.utter_message(template="utter_search_accommodation_results", quick_replies=quick_replies)
         return []
 
 class FindHotelAddress(Action):
@@ -167,8 +152,6 @@ class FindHotelAddress(Action):
         hotel_city = tracker.get_slot("hotel_city")
         full_path = _create_path(ENDPOINTS["base"], hotel_type, ENDPOINTS[hotel_type]["id_query"], hotel_id)
         results = requests.get(full_path).json()
-        print("type of results address_________________________:",type(results))
-        print("Results address_________________________________:",results)
         num = int(hotel_id) - 1
         if results:
             selected = results[num]
@@ -232,12 +215,9 @@ class HotelForm(FormAction):
             location = local[0]
         else:
             location = local
-        print("location first called___________________:",location)
         hotel_type = tracker.get_slot('hotel_type')
-        print("location first called___________________:",hotel_type)
 
         results = _find_hotels(location, hotel_type)
-        print("Results after value is passed_______________:",results)
         button_name = _resolve_name(HOTEL_TYPES, hotel_type)
         if len(results) == 0:
             dispatcher.utter_message("Sorry, we could not find a {} in {}.".format(button_name, location.title()))
@@ -266,7 +246,7 @@ class HotelForm(FormAction):
                 name = r["hotel_name"]
             
             payload = "/inform{\"hotel_id\":\"" + hotel_id + "\"}"
-            buttons.append({"type": postback, "title": "{}".format(name.title()), "payload": payload})
+            buttons.append({"type": "postback", "title": "{}".format(name.title()), "payload": payload})
 
         if len(buttons) == 1:
             message = "Here is a {} near you:".format(button_name)
@@ -354,10 +334,9 @@ class FindFacilityTypes(Action):
                 "resource") + "\"}"
 
             buttons.append(
-                {"type": postback, "title": "{}".format(facility_type.get("name").title()), "payload": payload})
+                {"type": "postback", "title": "{}".format(facility_type.get("name").title()), "payload": payload})
 
-        # TODO: update rasa core version for configurable `button_type`
-        dispatcher.utter_button_message("utter_search_healthcare_results", buttons, tracker)
+        dispatcher.utter_button_template("utter_search_healthcare_results", buttons, tracker)
         return []
 
 
@@ -467,7 +446,7 @@ class FacilityForm(FormAction):
 
             payload = "/inform{\"facility_id\":\"" + facility_id + "\"}"
             buttons.append(
-                {"type": postback, "title": "{}".format(name.title()), "payload": payload})
+                {"type": "postback", "title": "{}".format(name.title()), "payload": payload})
 
         if len(buttons) == 1:
             message = "Here is a {} near you:".format(button_name)
@@ -476,8 +455,7 @@ class FacilityForm(FormAction):
                 button_name = "pharmacies"
             message = "Here are {} {}s near you:".format(len(buttons),
                                                          button_name)
-
-        # TODO: update rasa core version for configurable `button_type`
+                                                         
         dispatcher.utter_button_message(message, buttons)
 
         return []
