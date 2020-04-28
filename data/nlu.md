@@ -304,6 +304,7 @@
 ## intent:enquire_accommodation
 - [accommodation](information_type)
 - [accommodations](information_type)
+- [Accommodations](information_type)
 - lodging and fooding
 - give me some [accommodations](information_type) informations
 - i want to know about the accommodations in nepal
@@ -317,7 +318,7 @@
 - need to stay tonight
 - find me a hotel
 - need to know about the hotels in nepal
-- [Accomodation](location)[Accomodation](information_type)
+- [Accommodation](information_type)
 
 ## intent:search_provider_hotel
 - i need a [5-star hotel](hotel_type)
@@ -419,6 +420,8 @@
 ## intent:enquire_healthfacility
 - [health facility](information_type)
 - [health facilities](information_type)
+- [Health Facility](information_type)
+- [Health facility](information_type)
 - give me some [health facility](information_type) informations
 - i want to know about the health facility in nepal
 - where can i find hospitals in nepal
@@ -562,6 +565,13 @@
 - what are the language people speak in nepal
 - which language people speak in nepal
 
+## intent:transportation
+- [transportation](quickfacts_type) facility in nepal
+- how to get taxi in nepal
+- how to travel in nepal
+- what are the vehicles available in nepal to travel
+- [transportation](quickfacts_type)
+
 ## intent:enquire_explore_more
 - [explore more](information_type)
 - i want to explore more
@@ -631,8 +641,8 @@
 - si
 - ok
 - okay
-- [Okay](location)
-- [Yes](location)
+- Okay
+- Yes
 
 ## intent:deny
 - no
@@ -723,6 +733,7 @@
 - namaste
 - hello
 - start
+- who are you
 
 ## intent:thanks
 - Thanks
