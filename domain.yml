@@ -1,5 +1,5 @@
 session_config:
-  session_expiration_time: 60
+  session_expiration_time: 60.0
   carry_over_slots_to_new_session: true
 intents:
 - greet
@@ -52,6 +52,7 @@ intents:
 - internet
 - saftey
 - language
+- transportation
 - culture_food
 - safety
 - enquire_culture
@@ -119,7 +120,23 @@ responses:
   utter_search_provider_visa_welcome:
   - text: We are happy to welcome you.
   utter_enquire_visa_info:
-  - text: To know about the Visa details [click here](http://www.nepalimmigration.gov.np/page/tourist-visa)
+  - custom:
+      attachment:
+        type: "template"
+        payload: 
+          template_type: "generic"
+          elements:
+          - title: "Visa Details"
+            image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Emblem_of_Nepal.svg/1200px-Emblem_of_Nepal.svg.png"
+            subtitle: "To know about the Visa details."
+            default_action: 
+              type: "web_url"
+              url: "http://www.nepalimmigration.gov.np/page/tourist-visa"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "http://www.nepalimmigration.gov.np/page/tourist-visa"
+              title: "Click Here"
   utter_search_provider_placestovisit_lifetime:
   - text: Once is not enough, rightly so, visit to Nepal is a lifetime experience.
   utter_enquire_places_to_visit:
@@ -140,46 +157,110 @@ responses:
       going on a mighty trek or just visiting a temple.
   utter_search_spiritual_places_results:
   - text: 'Here are some of the famous Spiritual Places in Nepal:'
-    quick_replies:
-    - content_type: text
-      title: Pashupatinath
-      payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'
-    - content_type: text  
-      title: Boudhanath
-      payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'
-    - content_type: text
-      title: Swoyambhunath
-      payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
-    - content_type: text 
-      title: Muktinath
-      payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
-    - content_type: text
-      title: Janaki Temple
-      payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
-    - content_type: text
-      title: Others
-      payload: '/spiritual_other{"spiritualplace_type": "Other Spiritual Places"}'
+    custom:
+      attachment:
+        type: "template"
+        payload: 
+          template_type: "generic"
+          elements:
+          - title: "Pashupatinath"
+            image_url: "https://www.welcomenepal.com/uploads/destination/pashupatinath-sm-pilgrims.jpeg"
+            subtitle: "Dedicated to Lord Shiva."
+            default_action: 
+              type: "web_url"
+              url: "http://pashupatinathtemple.org"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "http://pashupatinathtemple.org"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/spiritual_pashupatinath{"spiritualplace_type": "Pashupatinath"}'  
+          - title: "Swoyambhunath"
+            image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Swayambhunath_2018.jpg/1280px-Swayambhunath_2018.jpg"
+            subtitle: "This stupa is the oldest of its kind in Nepal."
+            default_action: 
+              type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Swayambhunath"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Swayambhunath"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/spiritual_swoyambhunath{"spiritualplace_type": "Swoyambhunath"}'
+          - title: "Boudhanath"
+            image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Boudha_Stupa_2018_04.jpg/1280px-Boudha_Stupa_2018_04.jpg"
+            subtitle: "Boudhanath is one of the spiritual place of Nepal famous amoung Buddhist."
+            default_action: 
+              type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Boudhanath"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Boudhanath"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/spiritual_boudhanath{"spiritualplace_type": "Boudhanath"}'     
+          - title: "Muktinath"
+            image_url: "https://upload.wikimedia.org/wikipedia/commons/3/32/Muktinath_Temple.jpg"
+            subtitle: "Muktinath is a sacred place for both Hindus and Buddhist."
+            default_action: 
+              type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Muktinath"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Muktinath"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/spiritual_muktinath{"spiritualplace_type": "Muktinath"}'
+          - title: "Janaki Temple"
+            image_url: "https://www.nepaltrekking.com/wp-content/uploads/2019/08/janakpur88.jpg"
+            subtitle: "Janakpur is famous for religious and cultural tourism due to Ram-Janaki temple."
+            default_action: 
+              type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Janaki_Mandir"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Janaki_Mandir"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/spiritual_janaki{"spiritualplace_type": "Janaki Temple"}'
+          - title: "Others"
+            image_url: "https://visitnepal2020.com/wp-content/uploads/2019/12/visit-nepal-2020-banner.jpg"
+            subtitle: "Nepal is one step ahead of spiritual places"
+            default_action: 
+              type: "web_url"
+              url: "https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal"
+              title: "View More"
   utter_search_spiritual_pashupatinath:
   - text: "Pashupatinath\nDedicated to Lord Shiva, Pashupatinath is one of the four\
       \ most important religious sites in Asia for devotees of Shiva. Built in the\
       \ 5th century and  later renovated by Malla kings, the site itself is said to\
       \ have existed from the beginning of the millennium when a Shiva lingam was\
-      \ discovered here.[View More](http://pashupatinathtemple.org/)\n"
-    image: https://www.welcomenepal.com/uploads/destination/pashupatinath-sm-pilgrims.jpeg
+      \ discovered here."
   utter_search_spiritual_swoyambhunath:
   - text: "Swoyambhunath\nResting on a hillock 3 km west of Kathmandu, Swayambhu is\
       \ one of the holiest Buddhist stupas in Nepal. It is said to have evolved spontaneously\
       \ when the valley was created out of a primordial lake more than 2,000 years\
       \ ago. This stupa is the oldest of its kind in Nepal and has numerous shrines\
-      \ and monasteries on its premises.[View More](https://en.wikipedia.org/wiki/Swayambhunath)\n"
-    image: https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Swayambhunath_2018.jpg/1280px-Swayambhunath_2018.jpg
+      \ and monasteries on its premises."
   utter_search_spiritual_boudhanath:
   - text: "Boudhanath\nSituated 8 km to the east of downtown Kathmandu, Boudha,  is\
       \ one of the UNESCO World Heritage sites and one of the most imposing landmarks\
       \ in Kathmandu. Visible as soon as you land at the Tribhuvan International Airport,\
-      \ it is the largest stupa in the Kathmandu Valley.[View More](https://en.wikipedia.org/wiki/Boudhanath)\"\
-      \n"
-    image: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Boudha_Stupa_2018_04.jpg/1200px-Boudha_Stupa_2018_04.jpg
+      \ it is the largest stupa in the Kathmandu Valley."
   utter_search_spiritual_muktinath:
   - text: "Muktinath\nMuktinath is a sacred place for both Hindus and Buddhist lies\
       \ at 3710m altitude in Mustang, Nepal. It is a place of salvation for Hindus\
@@ -188,47 +269,109 @@ responses:
       \ temple, there are 108 waterspouts, known as “Muktidhara” where devotees take\
       \ bath, which is believed to get salvation. To reach at Muktinath, either take\
       \ a flight from Kathmandu to Pokhara and then fly to Jomsom or take a jeep to\
-      \ Ranipauwa near to Muktinath.[View More](https://en.wikipedia.org/wiki/Muktinath)\"\
-      \n"
-    image: https://upload.wikimedia.org/wikipedia/commons/3/32/Muktinath_Temple.jpg
+      \ Ranipauwa near to Muktinath."
   utter_search_spiritual_janaki:
   - text: "Janaki Temple\nJanakpur is famous for religious and cultural tourism due\
       \ to Ram-Janaki temple, a hindu temple of Goddess Sita. This temple is also\
       \ known as “Nau lakh mandir” as the cost to build this temple in 1898 was 9\
       \ lakh. It is three-story sixty rooms structure with the height of 50m and covers\
       \ an area of 4,806 sq. feet. Every year, thousands of pilgrims from India, Sri\
-      \ Lanka and other countries visit to worship lord Ram and Goddesses Sita.[View\
-      \ More](https://en.wikipedia.org/wiki/Janaki_Mandir)\n"
-    image: https://www.nepaltrekking.com/wp-content/uploads/2019/08/janakpur88.jpg
+      \ Lanka and other countries visit to worship lord Ram and Goddesses Sita."
   utter_search_spiritual_others:
-  - text: "Other Spiritual Places\nNepal is one step ahead of spiritual places[View\
-      \ More](https://www.nepalspiritualtrekking.com/blog/top-spiritual-places-in-kathmandu-nepal/)\n"
-    image: https://visitnepal2020.com/wp-content/uploads/2019/12/visit-nepal-2020-banner.jpg
+  - text: "Other Spiritual Places\nNepal is one step ahead of spiritual places"
   utter_search_provider_historical_places:
   - text: Nepal has a rich history that is unique and enchanting. From massive Hindu
       temples to quaint Buddhist monasteries and architectural masterpieces, Nepal
       has it all.
   utter_search_historical_places_results:
   - text: 'Here are some of most popular historical destinations:'
-    quick_replies:
-    - content_type: text
-      title: Kathmandu Durbar Square
-      payload: '/historical_kathmandu{"historicalplace_type": "Kathmandu Durbar Square"}'
-    - content_type: text 
-      title: Patan Durbar Square
-      payload: '/historical_patan{"historicalplace_type": "Patan Durbar Square"}'
-    - content_type: text
-      title: Bhaktapur Durbar Square
-      payload: '/historical_bhaktapur{"historicalplace_type": "Bhaktapur Durbar Square"}'
-    - content_type: text
-      title: Lumbini
-      payload: '/historical_lumbini{"historicalplace_type": "Lumbini"}'
-    - content_type: text
-      title: Gorkha Durbar
-      payload: '/historical_gorkha{"historicalplace_type": "Gorkha"}'
-    - content_type: text
-      title: Others
-      payload: '/historical_other{"historicalplace_type": "Other Historical Places"}'
+    custom:
+      attachment:
+        type: "template"
+        payload: 
+          template_type: "generic"
+          elements:
+          - title: "Kathmandu Durbar Square"
+            image_url: "https://i2.wp.com/www.mountainmarttreks.com/blog/wp-content/uploads/2017/06/kathmandu-durbar-square.jpg?resize=640%2C442"
+            subtitle: "This is an ancient royal courtyard in the heart of the capital city, Kathmandu."
+            default_action: 
+              type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Kathmandu_Durbar_Square"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Kathmandu_Durbar_Square"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/historical_kathmandu{"historicalplace_type": "Kathmandu Durbar Square"}' 
+          - title: "Bhaktapur Durbar Square"
+            image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Bhaktapur_Durbar_Square%2C_Bhatkapur.jpg/450px-Bhaktapur_Durbar_Square%2C_Bhatkapur.jpg"
+            subtitle: "The Bhaktapur Durbar square is also known as Bhadgaon."
+            default_action: 
+              type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Bhaktapur_Durbar_Square"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Bhaktapur_Durbar_Square"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/historical_bhaktapur{"historicalplace_type": "Bhaktapur Durbar Square"}'
+          - title: "Patan Durbar Square"
+            image_url: "https://www.thamserkutrekking.com/images/cnceverest/place/180406082405patan-ds-banner.jpg"
+            subtitle: "The Patan Durbar Square is situated only 8 km south-east of Kathmandu city."
+            default_action: 
+              type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Patan_Durbar_Square"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Patan_Durbar_Square"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/historical_patan{"historicalplace_type": "Patan Durbar Square"}'   
+          - title: "Lumbini"
+            image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Lumbini_4.jpg/375px-Lumbini_4.jpg"
+            subtitle: "It is the birthplace of Lord Buddha enlisted as a UNESCO World Heritage sites."
+            default_action: 
+              type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Lumbini"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://en.wikipedia.org/wiki/Lumbini"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/historical_lumbini{"historicalplace_type": "Lumbini"}'
+          - title: "Gorkha Durbar"
+            image_url: "https://www.nepalsanctuarytreks.com/wp-content/uploads/2018/09/Gorkha-Palace-durbar.jpg"
+            subtitle: "The 16th-century Gorkha Durbar is a fort, palace and temple all in one."
+            default_action: 
+              type: "web_url"
+              url: "https://www.lonelyplanet.com/nepal/kathmandu-to-pokhara/gorkha/attractions/gorkha-durbar/a/poi-sig/1171979/357147"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.lonelyplanet.com/nepal/kathmandu-to-pokhara/gorkha/attractions/gorkha-durbar/a/poi-sig/1171979/357147"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/historical_gorkha{"historicalplace_type": "Gorkha"}'
+          - title: "Others"
+            image_url: "https://www.oyorooms.com/blog/wp-content/uploads/2018/06/Nepal-Historical-Places-Featured-Image.jpg"
+            subtitle: "Nepal’s top-rated historical attractions are located in and around Kathmandu."
+            default_action: 
+              type: "web_url"
+              url: "https://www.oyorooms.com/blog/historical-places-of-nepal"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.oyorooms.com/blog/historical-places-of-nepal"
+              title: "View More"     
   utter_search_historical_kathmandu:
   - text: "Kathmandu Durbar Square\nThis is an ancient royal courtyard which lies\
       \ in the heart of the capital city, Kathmandu. Another name for Kathmandu Durbar\
@@ -237,30 +380,26 @@ responses:
       \ many temples which are dedicated to different Hindu deities. Most of the buildings\
       \ here were constructed from the 15th – 18th centuries. The palace is named\
       \ after the Hindu god Hanuman, who is regarded as the protector of the entire\
-      \ palace...[View More](https://en.wikipedia.org/wiki/Kathmandu_Durbar_Square)\n"
-    image: https://i2.wp.com/www.mountainmarttreks.com/blog/wp-content/uploads/2017/06/kathmandu-durbar-square.jpg?resize=640%2C442
+      \ palace."
   utter_search_historical_patan:
   - text: "Patan Durbar Square\nThe Patan Durbar Square is situated only 8 km south-east\
       \ of Kathmandu city. This city is one of the oldest cities in Kathmandu valley.\
       \ The city was founded in the 3rd century. It is an open museum of the finest\
       \ Newari craftsmanship. The Hindu and Buddhist monuments are scattered around\
-      \ this ancient royal courtyard...[View More](https://en.wikipedia.org/wiki/Patan_Durbar_Square)\n"
-    image: https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/"Patan_Durbar_Square".JPG/1024px-"Patan_Durbar_Square".JPG
+      \ this ancient royal courtyard."
   utter_search_historical_bhaktapur:
   - text: "Bhaktapur Durbar Square\nThe Bhaktapur Durbar square, also known as Bhadgaon,\
       \ is a unique city located 13 km east of Kathmandu. The complex consists of\
       \ at least four distinct squares. They are namely Durbar Square, Taumadhi Square,\
       \ Dattatreya Square, and Pottery Square. The collective distinct squares is\
-      \ known as the Bhaktapur Durbar square...[View More](https://en.wikipedia.org/wiki/Bhaktapur_Durbar_Square)\n"
-    image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Bhaktapur_Durbar_Square%2C_Bhatkapur.jpg/450px-Bhaktapur_Durbar_Square%2C_Bhatkapur.jpg
+      \ known as the Bhaktapur Durbar square."
   utter_search_historical_lumbini:
   - text: "Lumbini\nLumbini, the birthplace of Lord Buddha was enlisted as a UNESCO\
       \ World Heritage sites in 1997. This is one of the holiest places for Buddhist\
       \ pilgrimages. There are several temples including the Mayadevi Temple along\
       \ with many others which are under repair. Many monuments, monasteries, and\
       \ a museum, the Lumbini International Research Institute are also within this\
-      \ holy site...[View More](https://en.wikipedia.org/wiki/Lumbini)\n"
-    image: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Lumbini_4.jpg/375px-Lumbini_4.jpg
+      \ holy site."
   utter_search_historical_gorkha:
   - text: "Gorkha\nRegarded by many as the crowning glory of Newari architecture,\
       \ the 16th-century Gorkha Durbar is a fort, palace and temple all in one. Miraculously,\
@@ -268,8 +407,7 @@ responses:
       \ and at the time of research, repairs were still under way. The temple-palace\
       \ perches high above Gorkha on a knife-edge ridge, with superb views over the\
       \ Trisuli Valley and magnificent panoramas of the soaring peaks of the Annapurna,\
-      \ Manaslu and Ganesh Himalaya...[View More](https://www.lonelyplanet.com/nepal/kathmandu-to-pokhara/gorkha/attractions/gorkha-durbar/a/poi-sig/1171979/357147)\n"
-    image: https://www.nepalsanctuarytreks.com/wp-content/uploads/2018/09/Gorkha-Palace-durbar.jpg
+      \ Manaslu and Ganesh Himalaya."
   utter_search_historical_others:
   - text: "Other Historical Places\nNepal a small yet warm-hearted country and the\
       \ people of this country are really simple and welcoming. If we talk about the\
@@ -278,82 +416,207 @@ responses:
       \ India and China; this tiny mountainous kingdom has a distinct culture and\
       \ history.\nThe best thing – a large number of Nepal’s top-rated cultural and\
       \ historical attractions are located in and around Kathmandu, the capital city,\
-      \ making them highly accessible for visitors...[View More](https://www.oyorooms.com/blog/historical-places-of-nepal/)\n"
-    image: https://www.oyorooms.com/blog/wp-content/uploads/2018/06/Nepal-Historical-Places-Featured-Image.jpg
+      \ making them highly accessible for visitors."
   utter_search_provider_nature_places:
   - text: Nepal is blessed with natural beauty. It's untouched wilderness seeks unparallel
       attention.
   utter_search_nature_places_results:
   - text: 'Here are some of most popular nature destinations:'
-    quick_replies:
-    - content_type: text
-      title: Mountain Flights
-      payload: '/nature_mountain_flights{"natureplace_type": "Mountain Flights"}'
-    - content_type: text
-      title: Bird Watching
-      payload: '/nature_bird_watching{"natureplace_type": "Bird Watching"}'
-    - content_type: text
-      title: Mountain Viewing
-      payload: '/nature_mountain_viewing{"natureplace_type": "Mountain Viewing"}'
-    - content_type: text
-      title: Jungle Discovery
-      payload: '/nature_jungle_discovery{"natureplace_type": "Jungle Discovery"}'
-    - content_type: text
-      title: Butterfly Watching
-      payload: '/nature_butterfly_watching{"natureplace_type": "Butterfly Watching"}'
+    custom:
+      attachment:
+        type: "template"
+        payload: 
+          template_type: "generic"
+          elements:
+          - title: "Mountain Flights"
+            image_url: "https://www.welcomenepal.com/uploads/activity/mountainflight-ba-nature.jpeg"
+            subtitle: "Mountain flight is beyond one's imagination."
+            default_action: 
+              type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/mountain-flights.html"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/mountain-flights.html"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/nature_mountain_flights{"natureplace_type": "Mountain Flights"}' 
+          - title: "Bird Watching"
+            image_url: "https://www.welcomenepal.com/uploads/activity/birdwatching2-ss-nature.jpeg"
+            subtitle: "Nepal may be a small country in size but it's a bird watchers paradise."
+            default_action: 
+              type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/bird-watching.html"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/bird-watching.html"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/nature_bird_watching{"natureplace_type": "Bird Watching"}'  
+          - title: "Mountain Viewing"
+            image_url: "https://www.welcomenepal.com/uploads/activity/mountainviewing-pg-nature.jpeg"
+            subtitle: "Nepal offers the best mountain viewing options in the world."
+            default_action: 
+              type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/mountain-viewing.html"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/mountain-viewing.html"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/nature_mountain_viewing{"natureplace_type": "Mountain Viewing"}'
+          - title: "Jungle Discovery"
+            image_url: "https://www.welcomenepal.com/uploads/activity/junglesafari-ss-nature.jpeg"
+            subtitle: "Large swathes of jungles are being protected as national parks and reserves."
+            default_action: 
+              type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/jungle-discovery.html"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/jungle-discovery.html"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/nature_jungle_discovery{"natureplace_type": "Jungle Discovery"}'
+          - title: "Butterfly Watching"
+            image_url: "https://www.welcomenepal.com/uploads/activity/butterfly-oy-nature.jpeg"
+            subtitle: "With 651 species, Nepal offers fabulous butterfly watching options."
+            default_action: 
+              type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/butterfly-watching.html"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/butterfly-watching.html"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: '/nature_butterfly_watching{"natureplace_type": "Butterfly Watching"}'
   utter_search_nature_mountain_flights:
   - text: "Mountain Flights\nA mountain flight is beyond one's imagination, because\
       \ you've never seen anything like it before. Only a bird gets to see this glorious\
       \ view and you're up close within minutes of being airborne. Enjoy a close look\
       \ at some of the world's higest peaks including Mt. Everest and go home with\
-      \ incredible pictures because everyone gets a window seat!...[View More](https://www.welcomenepal.com/things-to-do/mountain-flights.html)\n"
-    image: https://www.welcomenepal.com/uploads/activity/mountainflight-ba-nature.jpeg
+      \ incredible pictures because everyone gets a window seat!."
   utter_search_nature_bird_watching:
   - text: "Bird Watching\nNepal may be a small country is size but it's a bird watchers'\
       \ paradise. Packed with national parks and a topography that encompasses the\
       \ sub-tropical to alpine conditions, Nepal plays host to more than 850 species\
-      \ of birds...[View More](https://www.welcomenepal.com/things-to-do/bird-watching.html)\n"
-    image: https://www.welcomenepal.com/uploads/activity/birdwatching2-ss-nature.jpeg
+      \ of birds."
   utter_search_nature_mountain_viewing:
   - text: "Mountain Viewing\nWhether you have only one day or several weeks, Nepal\
       \ offers the best mountain viewing options in the world. Take a trip to Nagakot\
       \ or Dhulikhel from where there are panoramic views of the Himalayas. Whether\
       \ it is a Mountain flight or a gruelling trek to the Everest or Annapurnas;\
       \ from the time you are flying in, you will be blessed with gorgeous views of\
-      \ snowy peaks...[View More](https://www.welcomenepal.com/things-to-do/mountain-viewing.html)\n"
-    image: https://www.welcomenepal.com/uploads/activity/mountainviewing-pg-nature.jpeg
+      \ snowy peaks."
   utter_search_nature_jungle_discovery:
   - text: "Jungle Discovery\nLarge swathes of jungles are being protected as national\
       \ parks and reserves. This has made it possible to take tourists into the national\
-      \ park for viewing wildlife on elephant back or a jeep safari...[View More](https://www.welcomenepal.com/things-to-do/jungle-discovery.html)\n"
-    image: https://www.welcomenepal.com/uploads/activity/junglesafari-ss-nature.jpeg
+      \ park for viewing wildlife on elephant back or a jeep safari."
   utter_search_nature_butterfly_watching:
   - text: "Butterfly Watching\nWith 651 species, which is 3.72 percent of the world's\
       \ butterflies, Nepal offers fabulous butterfly watching options. Nepal offers\
       \ fabulous destinations to see Great Orange Tips, Purple Sapphire Circles, Oakblues\
-      \ or common Brimstones...[View More](https://www.welcomenepal.com/things-to-do/butterfly-watching.html)\n"
-    image: https://www.welcomenepal.com/uploads/activity/butterfly-oy-nature.jpeg
+      \ or common Brimstones."
   utter_search_provider_thingstodo:
   - text: Let's find out!! What are you interested in?
-    quick_replies:
-    - content_type: text
-      title: Hiking
-      payload: /enquire_hiking
-    - content_type: text
-      title: Trekking
-      payload: /enquire_trekking
-    - content_type: text
-      title: Canyoning
-      payload: /enquire_canyoning
-    - content_type: text
-      title: Rafting
-      payload: /enquire_rafting
-    - content_type: text
-      title: Bungee
-      payload: /enquire_bungee
-    - content_type: text
-      title: Paragliding
-      payload: /enquire_paragliding
+    custom:
+      attachment:
+        type: "template"
+        payload: 
+          template_type: "generic"
+          elements:
+          - title: "Hiking"
+            image_url: "https://217354-660080-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/04/best-short-treks-in-nepal-1024x540.jpg"
+            subtitle: "Hiking is one of the most popular things to do in Nepal."
+            default_action: 
+              type: "web_url"
+              url: "https://www.everestuncensored.org/popular-hiking-routes-nepal/#"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.everestuncensored.org/popular-hiking-routes-nepal/#"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: /enquire_hiking
+          - title: "Trekking"
+            image_url: "https://www.welcomenepal.com/uploads/activity/trekking-banner.jpeg"
+            subtitle: "In recent years, Nepal has become a popular trekking destination in the world."
+            default_action: 
+              type: "web_url"
+              url: "https://www.magicalnepal.com/blog/best-treks-nepal"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.magicalnepal.com/blog/best-treks-nepal"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: /enquire_trekking  
+          - title: "Canyoning"
+            image_url: "https://www.welcomenepal.com/uploads/activity/canoying.jpeg"
+            subtitle: "The ultimate wet and wild canyoning experience in the Himalayas, Nepal has all."
+            default_action: 
+              type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/canyoning.html"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/canyoning.html"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: /enquire_canyoning
+          - title: "Rafting"
+            image_url: "https://www.welcomenepal.com/uploads/activity/rafting.jpeg"
+            subtitle: "Nepal boasts the most scenic and diverse white-water experiences on the planet."
+            default_action: 
+              type: "web_url"
+              url: "http://www.raftnepal.com"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "http://www.raftnepal.com"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: /enquire_rafting
+          - title: "Bungee"
+            image_url: "https://www.welcomenepal.com/uploads/activity/bungyjumping2-lr-adventure.jpeg"
+            subtitle: "Adrenaline junkies have been coming to Nepal to experience Bungee."
+            default_action: 
+              type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/bungee-jumping.html"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/bungee-jumping.html"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: /enquire_bungee      
+          - title: "Paragliding"
+            image_url: "https://www.welcomenepal.com/uploads/activity/paragliding-in-nepal.jpeg"
+            subtitle: "Fly above heaven, experience Paragliding in Nepal."
+            default_action: 
+              type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/paragliding.html"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.welcomenepal.com/things-to-do/paragliding.html"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: /enquire_paragliding
   utter_search_provider_hiking:
   - text: Have you ever experienced hiking in Nepal? If you haven't, then you are
       seriously missing out! Not only is it a beautiful adventure, but it's also an
@@ -361,17 +624,14 @@ responses:
   utter_search_hiking_results:
   - text: "Hiking\nBeginning with high mountains in the north and ending at the plains\
       \ of the Terai in the south, Nepal’s diverse topography offers numerous amount\
-      \ of activities to the visitors. It is a premier adventure-cum- culture destination...[View\
-      \ More](https://www.everestuncensored.org/popular-hiking-routes-nepal/#)\n"
-    image: https://s3.amazonaws.com/botsociety.prod.us/2dbb6e9fcf67cd0ad6da1a0f5_destination08jpg.jpg
+      \ of activities to the visitors. It is a premier adventure-cum- culture destination."
   utter_search_provider_trekking:
   - text: Nepal is the world's premier destination for Trekking and is the country
       where commercial Trekking was pioneered back in the early 1960s.
   utter_search_trekking_results:
   - text: "Trekking\nIn recent years, Nepal has become a popular trekking destination\
       \ in the world. You can enjoy mild walks to the breathtaking treks in the same\
-      \ country...[View More](https://www.magicalnepal.com/blog/best-treks-nepal/)\n"
-    image: https://s3.amazonaws.com/botsociety.prod.us/7bc2630189ee72cfc94360599_everestbasecamptrekinfebruary1jpg.jpg
+      \ country."
   utter_search_provider_canyoning:
   - text: Canyoning in these deep gorges has become an alterntive for thrill seekers
       who've done it all.
@@ -379,32 +639,27 @@ responses:
   - text: "Canyoning\nAn unusual adventure sport, canyoning is about coming down a\
       \ watery canyon by either abseiling, jumping or sliding through breathtaking\
       \ steep canyon walls and waterfalls into deep pools of water below. Explore\
-      \ hidden canyons in the Himalayas for the ultimate wet and wild canyoning experience!...[View\
-      \ More](https://www.welcomenepal.com/things-to-do/canyoning.html)\n"
-    image: https://s3.amazonaws.com/botsociety.prod.us/ba2b75f40accc6889fa212220130_canoyingjpeg.jpeg
+      \ hidden canyons in the Himalayas for the ultimate wet and wild canyoning experience!."
   utter_search_provider_rafting:
   - text: Nepal has some of the best rivers for Rafting in the world and attracts.
   utter_search_rafting_results:
   - text: "Rafting\nNepal boasts the most scenic and diverse white-water experiences\
       \ on the planet. From short trips for beginners to long trips lasting days,\
       \ the trip takes rafters from the Himalayan region to the (tarai) plains. There\
-      \ are more than a dozen rivers for rafting...[View More](http://www.raftnepal.com)\n"
-    image: https://s3.amazonaws.com/botsociety.prod.us/0e802e40cadb5f26c4899a64d6bef_raftingjpeg.jpeg
+      \ are more than a dozen rivers for rafting."
   utter_search_provider_bungee:
   - text: Nepal's first Bungee is unique and only a three hour drive from Kathmandu.
   utter_search_bungee_results:
   - text: "Bungee\nNepal's first Bungee is unique and only a three hour drive from\
       \ Kathmandu. Jump from a bridge to plunge 160 m towards the Bhote Kosi River\
-      \ only to be pulled back moments before you touch water...[View More](https://www.welcomenepal.com/things-to-do/bungee-jumping.html)\n"
-    image: https://s3.amazonaws.com/botsociety.prod.us/e35049ebd3874c13f74f53cc2c12f2b9ecde6_bungyjumping2lradventurejpeg.jpeg
+      \ only to be pulled back moments before you touch water."
   utter_search_provider_paragliding:
   - text: Nepal provides some of the best Paragliding experiences in the world with
       its natural rising thermals.
   utter_search_paragliding_results:
   - text: "Paragliding\nEnjoy the thrills of paragliding over spectacular landscapes\
       \ taking is unbelievable views of the Himalayan mountains, pristine lakes and\
-      \ verdant valleys like nowhere else on earth...[View More](https://www.welcomenepal.com/things-to-do/paragliding.html)\n"
-    image: https://www.welcomenepal.com/uploads/activity/paragliding-in-nepal.jpeg
+      \ verdant valleys like nowhere else on earth."
   utter_search_provider_culture:
   - text: Nepal's cultural diversity provides enormous events and activities pertaining
       to various ethnicity.
@@ -419,8 +674,26 @@ responses:
       payload: '/culture_food{"culture_type": "Foods"}'
       type: postback
   utter_search_provider_festivals:
-  - text: Festivals are bloodline of Nepalese. Here are list of festivals celebrated
-      in Nepal.
+  - custom:
+      attachment:
+        type: "template"
+        payload: 
+          template_type: "generic"
+          elements:
+          - title: "Festivals"
+            image_url: "https://www.holidify.com/images/cmsuploads/compressed/Diwali_Diya_20190523130802.jpg"
+            subtitle: "Festivals are bloodline of Nepalese."
+            default_action: 
+              type: "web_url"
+              url: "https://www.explorehimalaya.com/nepal-information/festival-and-events-of-nepal/"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://www.explorehimalaya.com/nepal-information/festival-and-events-of-nepal/"
+              title: "View More"
+            - type: "postback"
+              title: "More Details"
+              payload: /culture_festivals
   utter_search_festivals_results:
   - text: "Events & Festivals\n\nMonth\t-\tEvents & Festivals\n\nJan     -----Maghe\
       \ Sankranti\nFeb     -----Maha Shivaratri, Yoga Festival and \n            \
@@ -430,9 +703,7 @@ responses:
       \  Mother's Day\nJun     -----Red Machhendranath Jatra\nAug     -----Teej and\
       \ Father's Day\nSep     -----Indra Jatra, Dashain\nOct     -----Tihar, Annapurna\
       \ 100 Ultra Trail Race, \n             Mha Puja\nNov     -----Chhat Parva, Mani\
-      \ Rimdu\nDec     -----Bivah Panchami, Yomari Punhi, Tamu Lhosar\n[View More](https://www.explorehimalaya.com/nepal-information/festival-and-events-of-nepal/)\\\
-      n\n"
-    image: https://www.holidify.com/images/cmsuploads/compressed/Diwali_Diya_20190523130802.jpg
+      \ Rimdu\nDec     -----Bivah Panchami, Yomari Punhi, Tamu Lhosar\n"
   utter_search_provider_customs:
   - text: 'The customs that you should know before visiting Nepal are:'
   utter_search_customs_results:
@@ -443,44 +714,58 @@ responses:
       \ accept a handshake offered by either male or a female but never offer your\
       \ hand first.\n- Show decency in dress and avoid any show of public affection.\n"
   utter_search_provider_foods:
-  - text: Discover a world of flavors in Nepal, from wholesome dal-bhat to popular
-      momos & more.
+  - text: "Discover a world of flavors in Nepal, from wholesome dal-bhat to popular
+      momos & more. But Kathmandu has become the food capital of the world as the international cuisine."
   utter_search_foods_results:
-  - text: "FOODS & CUSINES\nNepal's most distinctive dishes are probably dal bhat\
-      \ (rice and lentils) and the popular momos (dumplings). But Kathmandu has become\
-      \ the food capital of the world as the international cuisine.\n[More About Food\
-      \ & Cuisine](https://www.expeditionsnepal.com/nepalese-food-and-drink/#more-263)\n"
-    image: https://www.expeditionsnepal.com/wp-content/uploads/2018/03/dal-bhaat-nepali-traditional-food-768x428.jpg
+  - custom:
+      attachment:
+        type: "template"
+        payload: 
+          template_type: "generic"
+          elements:
+          - title: "Foods & Cuisines"
+            image_url: "https://www.trekkersnepal.com/blog/wp-content/uploads/2019/11/Nepali-Thakali-Khana-Set-768x1024.jpg"
+            subtitle: "Nepal's most distinctive dishes are probably Dal Bhat (rice and lentils)."
+            default_action: 
+              type: "web_url"
+              url: "https://theculturetrip.com/asia/nepal/articles/10-traditional-nepali-dishes-need-try-least/"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://theculturetrip.com/asia/nepal/articles/10-traditional-nepali-dishes-need-try-least/"
+              title: "View More"
   utter_search_provider_quickfacts:
   - text: Home to ten of the highest peaks in the world, is frequented by adventure
       junkies from all over the world.
   utter_search_quickfacts_results:
-  - text: "CURRENCY\n  - The Nepalese currency is the Rupee and is divided into 100\
-      \ paisa\n  - and notes come in denominations of Rs. 1, 2, 5, 10, 50, 100, 500,\
-      \ 1000.\n  - Coins are of 1, 2 and 5 rupee denomination.\n\nINTERNET\n  - Mobile\
-      \ coverage is wide in Nepal, even in the rural areas. Internet facilities are\
-      \ available in hotels and cyber cafes in all major cities. Apart from the urban\
-      \ centers, popular trekking destinations - the Annapurna and Everest region\
-      \ - also have modern communication facilities.\n\nSAFETY\n  - Nepal is absolutely\
-      \ safe to travel.\n  - You can take a walk around the city from morning to late\
-      \ evening until the shops are closed.\n  - But make sure you do not trek alone.\
-      \ Trekking with a guide from a registered agency is the best security.\n  -\
-      \ Do not display your cash or expensive items.\n  - You can always reach out\
-      \ to Tourist police at :014247041 during any problem.\n\nLANGUAGE\n  - With\
-      \ over 120 different variations, Nepali is the main language in Nepal however,\
-      \ in main cities, English is also widely spoken. As the tourism and trekking\
-      \ industry in Nepal is thriving, English is widely spoken (or at least understood)\
-      \ by most people that you encounter during your trek. From personal experience,\
-      \ while there are still a few sherpas who didn’t speak English, most of them\
-      \ could understand more than they could speak.\n"
+  - text: "Here are some of the Quick Facts of Nepal"
+    quick_replies:
+    - content_type: text
+      title: Transportation
+      payload: /transportation
+    - content_type: text
+      title: Currency
+      payload: /currency
+    - content_type: text
+      title: Safety
+      payload: /safety
+    - content_type: text
+      title: Internet
+      payload: /internet
+    - content_type: text
+      title: Language
+      payload: /language
+  utter_search_transportation_results:
+  - text: "Transportation is not a problem in Nepal. Different modes of transportation are available according to your budget and preferences. Professional transport entrepreneurs, tour operators, airlines and transport companies are making their competent services available in the transportation sector of Nepal. Local transportation including government airlines (Nepal Airlines) may come under the grip of disorganization and extreme weather conditions. But there are more reliable and responsible transport services devoted to get you to your destinations. During festival times and peak tourist seasons, all means of transportation get overbooked.\n\http://nepal.gov.np:8080/NationalPortal/view-page?id=112"
+
   utter_search_currency_results:
-  - text: The Nepalese currency is the Rupee and is divided into 100 paisa.
+  - text: The Nepalese currency is the Rupee and is divided into 100 paisa. 
   utter_search_currency_results_2:
   - text: "- Bank notes come in denominations of Rs. 1, 2, 5, 10, 50, 100, 500, 1000.\n\
       - Coins are of 1, 2 and 5 rupee denomination.\n- You can exchange your foreign\
       \ currency in Bank or in Money Exchanger. There are number of Banks as well\
       \ as dedicated money exchanger can be found easily in main City area (Kathmandu,\
-      \ Pokhara, Chitwan etc.)\n[View More](https://www.lonelyplanet.com/nepal/a/nar-gr/money-and-costs/357105)\n"
+      \ Pokhara, Chitwan etc.)"
   utter_search_internet_results:
   - text: Mobile coverage is wide in Nepal, even in the rural areas. Internet facilities
       are available in hotels and cyber cafes in all major cities. Apart from the
@@ -501,45 +786,125 @@ responses:
       while there are still a few sherpas who didn’t speak English, most of them could
       understand more than they could speak.
   utter_search_explore_more_results_1:
-  - text: Visit Nepal
-    attachment:
-      type: video
-      payload:
-        src: 'https://youtu.be/ut-U-4m42aQ'
+  - text: Visit Nepal 2020
   utter_search_explore_more_results_2:
-  text: Explore Other Popular Places Like
-  quick_replies:
-  - content_type: text
-    title: Manang
-    payload: 'https://youtu.be/t8aaEbwy70Q'
-  - content_type: text
-    title: Pokhara
-    payload: 'https://youtu.be/anJF_ukzog8'
-  - content_type: text
-    title: Chitwan
-    payload: 'https://youtu.be/2rJP2CQHwgc'
-  - content_type: text
-    title: Rara Lake
-    payload: 'https://youtu.be/-eXJRqsk21M'
-  - content_type: text
-    title: Far West Nepal
-    payload: 'https://youtu.be/WQ3loHowLQo'
-  - content_type: text
-    title: LoManthang
-    payload: 'https://youtu.be/0iMu5KrmlH0'
-  - content_type: text
-    title: Dolakha
-    payload: 'https://youtu.be/VZiab-AuXRo'
-  - content_type: text
-    title: Bardiya
-    payload: 'https://youtu.be/z3fiNUnrS-o'
-  - content_type: text
-    title: Lamjung
-    payload: 'https://youtu.be/81QCDQi_Hew'
-  - content_type: text
-    title: East Nepal
-    payload: 'https://youtu.be/jZXam7JOe-s'
-
+  - text: Explore Other Popular Places Like
+    custom:
+      attachment:
+        type: "template"
+        payload: 
+          template_type: "generic"
+          elements:
+          - title: "Manang"
+            image_url: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Manag-village.jpg"
+            subtitle: "Manang is one of the popular place of Nepal."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=t8aaEbwy70Q&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/t8aaEbwy70Q"
+              title: "Watch Video"
+          - title: "Pokhara"
+            image_url: "https://img.traveltriangle.com/blog/wp-content/uploads/2018/10/Phewa-Lake-Cover.jpg"
+            subtitle: "Pokhara is famous for lakes."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=anJF_ukzog8&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/anJF_ukzog8"
+              title: "Watch Video"
+          - title: "Chitwan"
+            image_url: "https://visithimalayatreks.com/wp-content/uploads/2019/02/Chitwan-National-Park-Tour-1.jpg"
+            subtitle: "Chitwan is famous for One-horned Rhino and Jungle Safari."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=2rJP2CQHwgc&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/2rJP2CQHwgc"
+              title: "Watch Video"
+          - title: "Rara Lake"
+            image_url: "https://d3hne3c382ip58.cloudfront.net/resized/750x420/rara-lake-trek-tour-2-19705_1543208703.JPG"
+            subtitle: "Rara is one of the largest lake of Nepal."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=-eXJRqsk21M&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/-eXJRqsk21M"
+              title: "Watch Video"
+          - title: "Far West Nepal"
+            image_url: "https://media-cdn.tripadvisor.com/media/photo-s/0a/98/1a/10/nyingba-valley-trek-far.jpg"
+            subtitle: "Far West Nepal has Great Himalaya Trails."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=WQ3loHowLQo&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/WQ3loHowLQo"
+              title: "Watch Video"
+          - title: "LoManthang"
+            image_url: "https://www.insidehimalayas.com/wp-content/uploads/2017/04/lo-manthang.jpg"
+            subtitle: "Far West Nepal has Great Himalaya Trails."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=0iMu5KrmlH0&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/0iMu5KrmlH0"
+              title: "Watch Video"
+          - title: "Dolakha"
+            image_url: "https://i.pinimg.com/originals/80/bb/63/80bb63a9028c8362089a48331b3e4109.jpg"
+            subtitle: "Dolakha is famous for Kalinchwok Bhagwati and Tsho-rolpa, a glacier Lake."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=VZiab-AuXRo&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/VZiab-AuXRo"
+              title: "Watch Video"
+          - title: "Bardiya"
+            image_url: "https://english.onlinekhabar.com/wp-content/uploads/2018/07/tiger1.jpg"
+            subtitle: "Bardiya National Park is located in Bardiya."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=z3fiNUnrS-o&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/z3fiNUnrS-o"
+              title: "Watch Video"
+          - title: "Lamjung"
+            image_url: "https://sherpakhangri.com/images/menu/honey-hunting-0001_664d02aa1998d20dcecfa3ee32147f75.nbcnews-fp-1200-800_.jpg"
+            subtitle: "Lamjung is famous for Ghale Gau and honey haunting."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=81QCDQi_Hew&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/81QCDQi_Hew"
+              title: "Watch Video"
+          - title: "East Nepal"
+            image_url: "https://www.nepal24hours.com/wp-content/uploads/2014/11/Nepal-tea-garden.jpg"
+            subtitle: "East Nepal is famous for plain Terai, hill stations and tea cultivation."
+            default_action: 
+              type: "web_url"
+              url: "https://www.youtube.com/watch?v=jZXam7JOe-s&feature=youtu.be"
+              webview_height_ratio: "tall"
+            buttons:
+            - type: "web_url"
+              url: "https://youtu.be/jZXam7JOe-s"
+              title: "Watch Video"
   utter_search_accommodation_results:
   - text: 'Hey there! Please choose one of the hotel type from the options:'
   utter_search_healthcare_results:
@@ -620,6 +985,7 @@ actions:
 - utter_search_safety_results
 - utter_search_safety_results_2
 - utter_search_language_resuts
+- utter_search_transportation_results
 - utter_search_explore_more_results_1
 - utter_search_explore_more_results_2
 - utter_search_accommodation_results
