@@ -6,6 +6,10 @@
 * thanks
     - utter_noworries
 
+## story
+* out_of_scope
+    - utter_ask_information_type
+
 ## Visa story 1
 * greet
     - utter_greet
@@ -456,6 +460,7 @@
     - utter_search_provider_culture
 * culture_festivals{"culture_type":"Festivals"}
     - utter_search_provider_festivals
+* culture_festivals
     - utter_search_festivals_results
 
 ## Customs
@@ -525,6 +530,18 @@
 * enquire_quick_facts
     - utter_search_provider_quickfacts
     - utter_search_quickfacts_results
+* transportation
+    - utter_search_transportation_results
+* currency
+    - utter_search_currency_results
+    - utter_search_currency_results_2
+* internet
+    - utter_search_internet_results
+* safety
+    - utter_search_safety_results
+    - utter_search_safety_results_2
+* language
+    - utter_search_language_resuts
 
 ## New Story
 
@@ -627,47 +644,6 @@
 * thanks
     - utter_noworries
 
-<!-- ## accommodation_interactive_story
-* out_of_scope
-    - find_hotel_types
-* inform{"hotel_type": "3-star"}
-    - slot{"hotel_type": "3-star"}
-    - hotel_form
-    - form{"name": "hotel_form"}
-    - slot{"hotel_type": "3-star"}
-    - slot{"hotel_type": "3-star"}
-    - slot{"requested_slot": "location"}
-* form: inform{"location": "Kathmandu"}
-    - slot{"location": "Kathmandu"}
-    - form: hotel_form
-    - slot{"location": "Kathmandu"}
-    - form{"name": null}
-    - slot{"requested_slot": null} -->
-
-<!-- ## New Story
-
-    - slot{"hotel_type":"4-star"}
-* greet
-    - utter_greet
-    - utter_ask_information_type
-* enquire_accommodation
-    - find_hotel_types
-* inform{"hotel_type":"4-star"}
-    - slot{"hotel_type":"4-star"}
-    - hotel_form
-* inform{"location":"Kathmandu"}
-    - hotel_form
-    - form{"name":"hotel_form"}
-    - slot{"hotel_type":"4-star"}
-    - slot{"location":"Kathmandu"}
-    - slot{"location":["Kathmandu","Kathmandu"]}
-    - form{"name":null}
-    - slot{"requested_slot":null}
-* inform{"hotel_id":"2"}
-    - slot{"hotel_id":"2"}
-    - find_hotel_address
-    - slot{"hotel_address":"Ravi Bhanvan, +977-1-5234725, Reservation@Crowneimperial.Com, Https://Www.Crowneimperial.Com"}
-    - utter_hotel_address -->
 
 ## New Story
 
